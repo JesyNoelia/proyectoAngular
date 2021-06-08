@@ -1,0 +1,27 @@
+.container{
+    margin-top: 50px;
+    max-width: 600px;
+}
+
+input, textarea{
+	border-bottom: 2px solid #cccccc;
+	padding: 5px;
+	
+}
+#nombre, #email, #telefono, #asunto{
+  border-top: whitesmoke;
+  border-left: whitesmoke;
+  border-right: whitesmoke;
+  background-color: whitesmoke;
+  width: 100%;
+}
+#texto{
+  background-color: #ffffff;
+  width: 100%;
+}
+#enviar{
+  font-size: 20px;
+  font-weight: bold;
+  border: 1px solid #cccccc;
+  cursor: pointer;
+}
