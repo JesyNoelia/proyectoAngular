@@ -1,0 +1,13 @@
+.navbar{
+    background-color: rgb(49, 211, 233);
+}
+
+.navbar ul li{
+    font-size: 1.2em;
+    transition: .5s;
+
+}
+.registro{
+    border: 1px solid gray;
+    
+}
