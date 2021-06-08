@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { CardProductoComponent } from './components/card-producto/card-producto.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { FormularioProductoComponent } from './components/formulario-producto/formulario-producto.component';
 import { HomeComponent } from './components/home/home.component';
@@ -10,7 +11,7 @@ import { RegistroUsuarioComponent } from './components/registro-usuario/registro
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
   { path: 'home', component: HomeComponent },
-  /* { path: 'productos' }, */
+  { path: 'productos', component: CardProductoComponent },
   { path: 'form', component: FormularioProductoComponent },
   { path: 'contacto', component: ContactoComponent },
   { path: 'login', component: LoginComponent },
