@@ -9,6 +9,7 @@ import { HeroComponent } from './components/hero/hero.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
 import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HomeComponent } from './components/home/home.component';
     FooterComponent,
     HeroComponent,
     RegistroUsuarioComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
