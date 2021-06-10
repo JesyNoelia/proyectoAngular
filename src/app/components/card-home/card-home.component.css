@@ -1,0 +1,103 @@
+
+section .principal{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-top: 2.5em;
+}
+
+section .principal article{
+    width: 31.25em;
+	height: 18.75em;
+    margin: 10px;
+    padding:20px;
+    text-align: end;
+    position: relative;
+	-webkit-box-shadow: 10px 10px 93px 0px rgba(48, 67, 80, 0.75);
+	-moz-box-shadow: 10px 10px 93px 0px  rgba(48, 67, 80, 0.75);
+	box-shadow: 10px 10px 93px 0px  rgba(48, 67, 80, 0.75);
+	background-color: rgb(22, 200, 206);
+	-moz-border-radius: 0 50% / 0 100%;
+     -webkit-border-radius: 0 50% / 0 100%;
+     border-radius: 0 50% / 0 100%;
+} 
+
+section .principal .imagen{
+    position: absolute;
+    padding: 10px;
+    top: -40px;
+	left:30px;
+	width: 50%;
+	height: 100%;
+}	
+
+
+section .principal .img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-image: url('../../../assets/imagenes/school-supplies-5541102_1920.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 10px 10px 10px rgba(153, 152, 155, 0.75);
+}
+
+section .principal .categoria{
+	width: 100%;
+	display:flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.categoria .fondoVacio{
+	width: 60%;
+}
+
+.categoria .texto{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	width: 40%;
+}
+
+.categoria .texto p{
+	font-family:'Indie Flower', cursive;
+	font-size: 15px;
+}
+
+.categoria .texto h3{
+	font-family: 'Mountains of Christmas', cursive;
+	font-size: 40px;
+	border-bottom: 1px solid black;
+	padding-bottom: 10px;
+	text-align: center;
+}
+
+.categoria .texto button{
+	font-family: 'Mountains of Christmas', cursive;
+	padding: 5px;
+    width: 100px;
+	background-color:  rgb(22, 200, 206);
+	border-radius:5px;
+}
+
+.categoria .boton{
+	display:flex;
+	justify-content: flex-end;
+}
+
+@media(max-width:375px){
+	section .principal article{
+		width: 70%;
+		height: 100%;
+	}
+	.texto p{
+	    font-size: 10px;
+    }
+    .texto h3{
+	    font-size: 20px;
+    }
+    .texto button{
+	    display:none;
+    }
+}

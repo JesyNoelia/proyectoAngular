@@ -13,6 +13,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { FormularioProductoComponent } from './components/formulario-producto/formulario-producto.component';
 import { CardProductoComponent } from './components/card-producto/card-producto.component';
+import { CardHomeComponent } from './components/card-home/card-home.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CardProductoComponent } from './components/card-producto/card-producto.
     LoginComponent,
     ContactoComponent,
     FormularioProductoComponent,
-    CardProductoComponent
+    CardProductoComponent,
+    CardHomeComponent
   ],
   imports: [
     BrowserModule,

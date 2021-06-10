@@ -1,0 +1,25 @@
+<section>
+    <div class="principal">
+        <article [ngStyle]="{backgroundColor: color}">
+            <div class="imagen">
+                <div class="img" [ngStyle]="{backgroundImage: 'url('+imagen+')'}"></div>
+            </div>
+
+            <div class="categoria">
+                <div class="fondoVacio">
+                </div>
+
+                <div class="texto">
+                    <h3>{{titulo}}</h3>
+                    <p>{{texto}}</p>
+
+                    <div class="boton">
+                        <button [ngStyle]="{backgroundColor: color}">Categorías</button>
+                    </div>
+                </div>
+            </div>
+
+        </article>
+
+    </div>
+</section>
