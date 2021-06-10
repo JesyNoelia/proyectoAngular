@@ -15,6 +15,7 @@ import { FormularioProductoComponent } from './components/formulario-producto/fo
 import { CardProductoComponent } from './components/card-producto/card-producto.component';
 import { CardHomeComponent } from './components/card-home/card-home.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { CardHomeComponent } from './components/card-home/card-home.component';
     ContactoComponent,
     FormularioProductoComponent,
     CardProductoComponent,
-    CardHomeComponent
+    CardHomeComponent,
+
   ],
   imports: [
     BrowserModule,

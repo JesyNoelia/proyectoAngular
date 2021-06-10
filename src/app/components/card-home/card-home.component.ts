@@ -11,6 +11,8 @@ export class CardHomeComponent implements OnInit {
   @Input() texto: string;
   @Input() color: string;
   @Input() imagen: string;
+  @Input() ruta: string;
+  @Input() textoBoton: string;
 
   constructor() {
 
