@@ -2,6 +2,7 @@
     max-width: 400px;
     background-color: rgb(255, 255, 151);
     margin-top: 20px;
+    border-radius: 10px;
 }
 
 .imagen{
@@ -15,14 +16,17 @@
     width: 150px;
     height: 150px;
     margin:20px 0;
+    border-radius: 10px;
 }
 
 .texto{
     background-color: rgb(255, 145, 71);
+    border-radius: 10px 10px 0 10px;
 }
 
 .piecard{
     background-color: rgb(250, 184, 187);
     display: flex;
     justify-content: space-around;
+    border-radius: 10px 0 10px 10px;
 }

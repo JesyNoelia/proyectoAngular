@@ -32,6 +32,9 @@ footer{
     font-size: 1.2em;
     color: rgb(255, 255, 255);
 }
+.legal{
+    background-color: rgba(255,255,255,0);
+}
 
 .legal li{
     list-style: none;
