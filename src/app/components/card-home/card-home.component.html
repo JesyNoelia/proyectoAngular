@@ -1,8 +1,8 @@
 <section>
     <div class="principal">
-        <article>
+        <article [ngStyle]="{backgroundColor: color}">
             <div class="imagen">
-                <div class="img"></div>
+                <div class="img" [ngStyle]="{backgroundImage: 'url('+imagen+')'}"></div>
             </div>
 
             <div class="categoria">
@@ -10,11 +10,11 @@
                 </div>
 
                 <div class="texto">
-                    <h3>Productos</h3>
-                    <p>¿Qué producto necesitas? Lo tenemos!!</p>
+                    <h3>{{titulo}}</h3>
+                    <p>{{texto}}</p>
 
                     <div class="boton">
-                        <button>Categorías</button>
+                        <button [ngStyle]="{backgroundColor: color}">Categorías</button>
                     </div>
                 </div>
             </div>
