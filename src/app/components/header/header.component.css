@@ -1,6 +1,11 @@
 .navbar{
     background-color: rgb(49, 211, 233);
 }
+.logo img{
+    width: 25%;
+    height: 25%;
+}
+
 
 .navbar ul li{
     font-size: 1.2em;

@@ -22,3 +22,8 @@
     justify-content: center;
     align-items: center;
 }
+
+.texto h1{
+    font-family: 'Mountains of Christmas', cursive;
+   font-size: 4em;
+}
