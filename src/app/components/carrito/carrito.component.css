@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card{
+    margin: 10px;
+}
+
+.price{
+    font-weight: bold;
+    font-size: 1.1em;
+}

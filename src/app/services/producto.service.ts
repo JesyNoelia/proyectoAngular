@@ -35,8 +35,8 @@ export class ProductoService {
   addProduct(productoId: number) {
 
   }
-  getCart() {
-
+  getCart(): Producto[] {
+    return []
   }
 
   getByWord(pWord) {
