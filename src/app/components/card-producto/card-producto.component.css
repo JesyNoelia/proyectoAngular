@@ -2,6 +2,13 @@
     width: 100%;
 }
 
+.buscadorTexto{
+    display: flex;
+    flex-direction: row;
+}
+.container{
+    min-height: 700px;
+}
 
 .productos{
     display: flex;
@@ -10,19 +17,23 @@
       
 }
 select option{
-    color: rgb(255, 115, 0);
+    color: rgb(255, 141, 47);
 }
 
 
 .cardProducto{
     width: 400px;
-    background-color: rgb(255, 255, 151);
+    max-height: 240px;
+    background-color: rgb(255, 255, 213);
     margin: 20px;
     border-radius: 10px;
 }
 .carrito{
-    color:white;
+    color:rgb(255, 150, 52);
     font-size: 1.5em;
+}
+.descripcion{
+    color: rgb(73, 72, 72);
 }
 
 .imagen{
@@ -40,14 +51,17 @@ select option{
 }
 
 .texto{
-    background-color: rgb(255, 145, 71);
+    background-color: rgb(203, 255, 107);
     border-radius: 10px 10px 0 10px;
+    text-align: center;
+   
 }
 
 .piecard{
-    background-color: rgb(250, 184, 187);
+    background-color: rgb(184, 250, 233);
     display: flex;
     justify-content: space-around;
     border-radius: 10px 0 10px 10px;
+    
 }
 
