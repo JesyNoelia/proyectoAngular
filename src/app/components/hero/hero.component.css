@@ -1,21 +1,24 @@
-.mochila img{
-    width: 100%;
-   
-};
-
 
 .hero-main{
-    position: relative;
-}
-.hero-texto{
-    position: absolute;
-    width: 300px;
-    height: 200px;
-    
+    background-image: url(../../../assets/imagenes/mochila_ondas.jpg);
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
-    top: 150px;
-    right: 150px;
     
+}
+.hero-texto{
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.texto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

@@ -3,7 +3,8 @@ export interface Producto {
     titulo: string,
     precio: number,
     descripcion: string,
-    talla: string,
-    curso: string,
-    estado: string
+    talla?: string,
+    curso?: string,
+    estado: string,
+    imagen: string
 }

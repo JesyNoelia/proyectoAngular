@@ -10,4 +10,10 @@
 .registro{
     border: 1px solid gray;
     
+    
+}
+
+.fas{
+    padding-right: 10px;
+    font-size: 1.3em;
 }
