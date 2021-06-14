@@ -31,6 +31,8 @@ export class AppComponent {
         return '../../../assets/imagenes/libroclip2.jpg';
       case '/registro':
         return '../../../assets/imagenes/lapizamarillo.jpg';
+      case '/contacto':
+        return '../../../assets/imagenes/libros.jpg';
 
 
     }
