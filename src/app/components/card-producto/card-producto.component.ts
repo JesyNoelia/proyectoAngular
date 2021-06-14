@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { Producto } from 'src/app/interfaces/producto.interface';
 import { ProductoService } from 'src/app/services/producto.service';
@@ -12,15 +12,11 @@ export class CardProductoComponent implements OnInit {
 
   productos: Producto[];
 
+  @Input() producto: Producto;
   constructor(private productoService: ProductoService) {
-
-
-
   }
 
   ngOnInit(): void {
-
-
   }
 
 };

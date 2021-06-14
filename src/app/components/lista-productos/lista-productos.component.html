@@ -35,5 +35,9 @@
 </div>
 
 <div class="container">
-    <app-card-producto></app-card-producto>
+    <div class="row">
+        <div class="col-4 " *ngFor="let product of productos">
+            <app-card-producto [producto]="product"></app-card-producto>
+        </div>
+    </div>
 </div>
