@@ -4,6 +4,10 @@
     min-height: calc(77vh - 170px);
    
 }
+.login{
+    font-family: 'Mountains of Christmas', cursive;
+    text-align: center;
+}
 
 .form-control{
     border-radius:1rem;

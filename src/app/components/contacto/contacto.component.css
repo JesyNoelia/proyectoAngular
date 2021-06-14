@@ -6,6 +6,10 @@
 #texto{
     width: 100%;
 }
+.contactoTitulo{
+    font-family: 'Mountains of Christmas', cursive;
+    text-align: center;
+}
 
 
 .form-control{
