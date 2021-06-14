@@ -1,0 +1,25 @@
+.buscador{
+    width: 100%;
+}
+.buscadorTexto{
+    display: flex;
+    flex-direction: row;
+}
+.fa-search{
+    margin-right: 10px;
+}
+.container{
+    min-height: 700px;
+}
+
+.botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin: 10px;
+}
+
+select option{
+    color: rgb(255, 141, 47);
+}

@@ -1,0 +1,39 @@
+<nav class="navbar navbar-light" style="background-color: #ffe657;">
+    <div class="container-fluid">
+        <div class="row buscador">
+
+            <div class="col-6 categorias">
+                <select class="form-select " (change)="onChange($event)">
+                    <option value="" selected>Todas las categorias</option>
+                    <option value="uniformes">Uniformes</option>
+                    <option value="material_escolar">Material Escolar</option>
+                    <option value="material_deportivo">Material Deportivo</option>
+                    <option value="libros">Libros</option>
+                    <option value="tecnologia">Tecnología</option>
+                    <option value="juguetes_didacticos">Juguetes Didacticos</option>
+                </select>
+            </div>
+            <div class="col-6 buscadorTexto">
+
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"
+                    [(ngModel)]="search">
+                <button class="btn btn-outline-danger d-flex me-5" type="submit" (click)="onClick()"><i
+                        class="fas fa-search"></i>Buscar</button>
+
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class=" botones">
+
+        <button class="btn btn-info me-2" (click)="onClickBtn(false)">Anterior</button>
+        <button class="btn btn-info me-2" (click)="onClickBtn(true)">Siguiente</button>
+
+    </div>
+</div>
+
+<div class="container">
+    <app-card-producto></app-card-producto>
+</div>

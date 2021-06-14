@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { PRODUCTOS } from '../db/productos.db';
 import { Producto } from '../interfaces/producto.interface';
@@ -8,14 +9,16 @@ import { Producto } from '../interfaces/producto.interface';
 export class ProductoService {
 
   private arrProductos: Producto[];
+  private baseUrl: string;
 
-  constructor() {
-    this.arrProductos = PRODUCTOS
+  constructor(private httpClient: HttpClient) {
+    this.arrProductos = PRODUCTOS;
+    this.baseUrl = 'http://localhost:3000/api/productos'
 
   }
 
-  getAll() {
-    return this.arrProductos
+  getAll(pLimit = 12, pPage = 1): Promise<Producto[]> {
+    return this.httpClient.get<Producto[]>(`${this.baseUrl}`).toPromise();
   }
 
   getByCategoria(pCategoria: string) {

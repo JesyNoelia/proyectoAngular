@@ -1,26 +1,9 @@
-.buscador{
-    width: 100%;
-}
-
-.buscadorTexto{
-    display: flex;
-    flex-direction: row;
-}
-.container{
-    min-height: 700px;
-}
-
 .productos{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
       
 }
-select option{
-    color: rgb(255, 141, 47);
-}
-
-
 .cardProducto{
     width: 400px;
     max-height: 240px;
