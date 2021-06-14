@@ -7,6 +7,20 @@
 h3{
     text-align: center;
 }
+.form-control{
+    border-radius:1rem;
+}
+
+.btnProducto {
+    width: 100%;
+    border: none;
+    border-radius: 1rem;
+    padding: 1.5%;
+    background: #fcdc26;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+}
 
 
    
