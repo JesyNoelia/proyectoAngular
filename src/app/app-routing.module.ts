@@ -6,6 +6,7 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { FormularioProductoComponent } from './components/formulario-producto/formulario-producto.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { MapaColesComponent } from './components/mapa-coles/mapa-coles.component';
 import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'contacto', component: ContactoComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registro', component: RegistroUsuarioComponent },
+  { path: 'mapas', component: MapaColesComponent },
   { path: '**', redirectTo: '/home' },
 ];
 

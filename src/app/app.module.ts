@@ -14,6 +14,7 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { FormularioProductoComponent } from './components/formulario-producto/formulario-producto.component';
 import { CardProductoComponent } from './components/card-producto/card-producto.component';
 import { CardHomeComponent } from './components/card-home/card-home.component';
+import { MapaColesComponent } from './components/mapa-coles/mapa-coles.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { CardHomeComponent } from './components/card-home/card-home.component';
     FormularioProductoComponent,
     CardProductoComponent,
     CardHomeComponent,
+    MapaColesComponent,
 
   ],
   imports: [
