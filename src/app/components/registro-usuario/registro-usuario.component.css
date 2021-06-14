@@ -2,3 +2,16 @@
     margin-top: 50px;
     max-width: 600px;
 }
+
+.form-control{
+    border-radius:1rem;
+}
+
+.btnRegistro{
+    width: 30%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+}
