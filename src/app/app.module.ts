@@ -19,6 +19,7 @@ import { CarritoComponent } from './components/carrito/carrito.component';
 import { ListaProductosComponent } from './components/lista-productos/lista-productos.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +36,7 @@ import { ListaProductosComponent } from './components/lista-productos/lista-prod
     MapaColesComponent,
     CarritoComponent,
     ListaProductosComponent,
+
 
   ],
   imports: [
