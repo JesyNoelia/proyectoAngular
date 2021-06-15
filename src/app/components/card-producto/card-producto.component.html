@@ -7,16 +7,17 @@
                         <img src="{{producto.imagen}}" alt="">
                     </div>
                     <div class="col-6 texto pt-2">
-                        <h4>{{producto.titulo}}</h4>
+                        <h4 class="mb-3 mt-3">{{producto.titulo}}</h4>
                         <p class="descripcion">{{producto.descripcion}}</p>
-                        <p>Curso: {{producto.curso}}</p>
-                        <p>Talla: {{producto.talla}}</p>
+                        <p *ngIf="(producto.curso)">Curso: {{producto.curso}}</p>
+                        <p *ngIf="(producto.talla)">Talla: {{producto.talla}}</p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 piecard pt-2">
-                        <h3>€ {{producto.precio}}</h3>
-                        <a href="#" class="mb-2 carrito"><i class="fas fa-shopping-cart"></i></a>
+                        <h3>{{ producto.precio | currency:'EUR' }}</h3>
+                        <button class="mb-2 carrito" (click)="onClick(producto)"><i
+                                class="fas fa-shopping-cart"></i></button>
                     </div>
                 </div>
             </div>

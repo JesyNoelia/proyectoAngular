@@ -10,13 +10,24 @@ import { ProductoService } from 'src/app/services/producto.service';
 })
 export class CardProductoComponent implements OnInit {
 
-  productos: Producto[];
-
   @Input() producto: Producto;
+
   constructor(private productoService: ProductoService) {
+
   }
 
   ngOnInit(): void {
+    //console.log(this.producto)
+  }
+
+  async onClick(pProducto: Producto) {
+
+
+    const res = await this.productoService.addProduct(pProducto);
+
+    console.log(res);
+
+
   }
 
 };
