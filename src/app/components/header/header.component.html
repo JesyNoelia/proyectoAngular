@@ -29,11 +29,24 @@
                         Sesión</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn me-5 mb-2 registro" href="#" [routerLink]="['/registro']">Registrate</a>
+                    <a class="btn mb-2 registro" href="#" [routerLink]="['/registro']">Registrate</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="btn mb-2" href="#" [routerLink]="['/carrito']"><i class="fas fa-shopping-cart"></i></a>
-                </li>
+                </li> -->
+                <div class="cart-menu align-items-center d-flex">
+                    <div class="sidebar-social">
+                        <ul>
+                            <li>
+                                <a href="#" class="cart" title="Carrito" target="_blank" rel="nofollow"
+                                    [routerLink]="['/carrito']"><i class="fas fa-shopping-cart"></i>
+                                    <span id="cart_menu_num" data-action="cart-can"
+                                        class="badge rounded-circle">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </ul>
         </div>
     </div>
