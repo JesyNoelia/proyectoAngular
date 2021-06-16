@@ -1,134 +1,29 @@
-<nav class="navbar navbar-light" style="background-color: #ffe657;">
-    <div class="container-fluid">
-        <div class="row buscador">
-
-            <div class="col-6 categorias">
-                <select class="form-select " (change)="onChange($event)">
-                    <option value="" selected>Todas las categorias</option>
-                    <option value="uniformes">Uniformes</option>
-                    <option value="material_escolar">Material Escolar</option>
-                    <option value="material_deportivo">Material Deportivo</option>
-                    <option value="libros">Libros</option>
-                    <option value="tecnologia">Tecnología</option>
-                    <option value="juguetes_didacticos">Juguetes Didacticos</option>
-                </select>
-            </div>
-            <div class="col-6 buscadorTexto">
-
-                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"
-                    [(ngModel)]="search">
-                <button class="btn btn-outline-danger" type="submit" (click)="onClick()">Buscar</button>
-
-            </div>
-        </div>
-    </div>
-</nav>
-
-
-
 <div class="container">
     <div class="productos">
         <div class="row ">
-            <div class="col-4 cardProducto" *ngFor="let producto of productos">
+            <div class="col-4 cardProducto">
                 <div class="row ">
                     <div class="col-6 imagen">
                         <img src="{{producto.imagen}}" alt="">
                     </div>
                     <div class="col-6 texto pt-2">
-                        <h4>{{producto.titulo}}</h4>
+                        <h4 class="mb-3 mt-3">{{producto.titulo}}</h4>
                         <p class="descripcion">{{producto.descripcion}}</p>
-                        <p>Curso: {{producto.curso}}</p>
-                        <p>Talla: {{producto.talla}}</p>
+                        <p *ngIf="(producto.curso)">Curso: {{producto.curso}}</p>
+                        <p *ngIf="(producto.talla)">Talla: {{producto.talla}}</p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 piecard pt-2">
-                        <h3>€ {{producto.precio}}</h3>
-                        <a href="#" class="mb-2 carrito"><i class="fas fa-shopping-cart"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- <div class="col-4 cardProducto">
-                <div class="row">
-                    <div class="col-8 imagen">
-                        <img src="../../../assets/imagenes/lapices.jpg" alt="">
-                    </div>
-                    <div class="col-4 texto pt-2">
-                        <p>Aqui va la descripción del producto</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 piecard pt-2">
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <a href="#" class="mb-2 carrito"><i class="fas fa-shopping-cart"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 cardProducto">
-                <div class="row">
-                    <div class="col-8 imagen">
-                        <img src="../../../assets/imagenes/lapices.jpg" alt="">
-                    </div>
-                    <div class="col-4 texto pt-2">
-                        <p>Aqui va la descripción del producto</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 piecard pt-2">
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <a href="#" class="mb-2 carrito"><i class="fas fa-shopping-cart"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 cardProducto">
-                <div class="row">
-                    <div class="col-8 imagen">
-                        <img src="../../../assets/imagenes/lapices.jpg" alt="">
-                    </div>
-                    <div class="col-4 texto pt-2">
-                        <p>Aqui va la descripción del producto</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 piecard pt-2">
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <a href="#" class="mb-2 carrito"><i class="fas fa-shopping-cart"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 cardProducto">
-                <div class="row">
-                    <div class="col-8 imagen">
-                        <img src="../../../assets/imagenes/lapices.jpg" alt="">
-                    </div>
-                    <div class="col-4 texto pt-2">
-                        <p>Aqui va la descripción del producto</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 piecard pt-2">
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <a href="#" class="mb-2 carrito"><i class="fas fa-shopping-cart"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 cardProducto">
-                <div class="row">
-                    <div class="col-8 imagen">
-                        <img src="../../../assets/imagenes/lapices.jpg" alt="">
-                    </div>
-                    <div class="col-4 texto pt-2">
-                        <p>Aqui va la descripción del producto</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 piecard pt-2">
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <a href="#" class="mb-2 carrito"><i class="fas fa-shopping-cart"></i></a>
-                    </div>
-                </div>
-            </div> -->
-        </div>
+                        <h3>{{ producto.precio | currency:'EUR' }}</h3>
+                        <button class="mb-2 carrito" (click)="onClick(producto)" *ngIf="seleccionado"><i
+                                class="fas fa-shopping-cart"></i></button>
 
+                        <p *ngIf="!seleccionado">Producto añadido al carrito</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
 </div>

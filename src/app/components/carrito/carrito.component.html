@@ -1,0 +1,33 @@
+<div class="btnComprar">
+    <button class="btn btn-info d-flex me-5 " (click)="onClickVaciar()">Vaciar carrito</button>
+    <h3 class="me-5">TOTAL= {{total}} €</h3>
+
+    <button class="btn btn-danger d-flex me-5 " (click)="onClickComprar()">Comprar</button>
+
+</div>
+
+<div class="container">
+    <div class="card cardCarrito" *ngFor="let producto of productos">
+
+        <div class="row">
+            <div class="col-6 imagen">
+                <img src="{{producto.imagen}}" alt="">
+            </div>
+            <div class="col-6">
+                <div class="card-body textoCarrito">
+                    <div>
+                        <h5 class="card-title">{{producto.titulo}}</h5>
+                        <p class="card-text price">{{ producto.precio | currency:'EUR' }}</p>
+                    </div>
+                    <div>
+                        <button class="btn btn-outline-warning btn-sm p-2 bd-highlight"
+                            (click)="onClickEliminar(producto)">Eliminar
+                            del
+                            Carrito
+                            <i class="fas fa-shopping-cart"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

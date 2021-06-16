@@ -1,6 +1,11 @@
 .navbar{
     background-color: rgb(49, 211, 233);
 }
+.logo img{
+    width: 25%;
+    height: 25%;
+}
+
 
 .navbar ul li{
     font-size: 1.2em;
@@ -16,4 +21,57 @@
 .fas{
     padding-right: 10px;
     font-size: 1.3em;
+}
+
+.sidebar-social li {
+  text-align: center;
+  width: 31.9%;
+  margin-bottom: 3px;
+  display: inline-block;
+  font-size: 10px;
+  padding: 0;
+}
+
+.sidebar-social i {
+  display: block;
+  margin: 0 0 10px 0;
+  width: 32px;
+  height: 32px;
+  margin: 10px 0;
+  line-height: 32px;
+  text-align: center;
+  font-size: 1.5em;
+  color: #000000;
+  margin-top: 0;
+  padding-top: 5px;
+}
+
+.sidebar-social a {
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* CSS para posicionar el bade cerca del carrito*/
+.cart {
+  position: relative;
+}
+
+#cart_menu_num {
+  position: absolute;
+  top: 0;
+  left: 125%;
+  background: red;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 2px;
 }

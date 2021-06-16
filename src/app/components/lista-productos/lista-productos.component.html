@@ -1,0 +1,40 @@
+<nav class="navbar navbar-light" style="background-color: #ffe657;">
+    <div class="container-fluid">
+        <div class="row buscador">
+
+            <div class="col-6 categorias">
+                <select class="form-select " (change)="onChange($event)">
+                    <option value="" selected>Todas las categorias</option>
+                    <option value="Uniformes">Uniformes</option>
+                    <option value="Material Escolar">Material Escolar</option>
+                    <option value="Material Deportivo">Material Deportivo</option>
+                    <option value="Libros">Libros</option>
+                    <option value="Tecnología">Tecnología</option>
+                    <option value="Juguetes Didácticos">Juguetes Didácticos</option>
+                </select>
+            </div>
+            <div class="col-6 buscadorTexto">
+
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"
+                    [(ngModel)]="search">
+                <button class="btn btn-outline-danger d-flex me-5" type="submit" (click)="onClick()"><i
+                        class="fas fa-search"></i>Buscar</button>
+
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container ">
+    <div class=" botones">
+
+        <button class="btn btn-info me-2" (click)="onClickBtn(false)">Anterior</button>
+        <button class="btn btn-info me-2" (click)="onClickBtn(true)">Siguiente</button>
+
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-12" *ngFor="let product of arrProductos">
+            <app-card-producto [producto]="product"></app-card-producto>
+        </div>
+    </div>
+</div>

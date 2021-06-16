@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+
 import { Producto } from 'src/app/interfaces/producto.interface';
 import { ProductoService } from 'src/app/services/producto.service';
 
@@ -10,30 +10,22 @@ import { ProductoService } from 'src/app/services/producto.service';
 })
 export class CardProductoComponent implements OnInit {
 
-  productos: Producto[];
-  search: string;
+  @Input() producto: Producto;
+
+  seleccionado: boolean
+
 
   constructor(private productoService: ProductoService) {
-    this.search = ""
-
-
+    this.seleccionado = true;
   }
 
   ngOnInit(): void {
-    this.productos = this.productoService.getAll();
-  }
-  onChange($event) {
-    if ($event.target.value === "") {
-      this.productos = this.productoService.getAll();
-    } else {
-      this.productos = this.productoService.getByCategoria($event.target.value)
-    }
+    //console.log(this.producto)
   }
 
-  onClick() {
-    this.productos = this.productoService.getByWord(this.search)
-    console.log(this.search);
-
-  }
-
-}
+  async onClick(pProducto: Producto) {
+    const res = await this.productoService.addProduct(pProducto);
+    this.seleccionado = false;
+    //console.log(res);
+  };
+};

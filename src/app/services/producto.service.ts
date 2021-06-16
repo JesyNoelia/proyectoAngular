@@ -1,5 +1,5 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { PRODUCTOS } from '../db/productos.db';
 import { Producto } from '../interfaces/producto.interface';
 
 @Injectable({
@@ -7,41 +7,83 @@ import { Producto } from '../interfaces/producto.interface';
 })
 export class ProductoService {
 
-  private arrProductos: Producto[];
 
-  constructor() {
-    this.arrProductos = PRODUCTOS
+  private baseUrl: string;
+  carrito: Producto[];
+  item: Producto;
 
-  }
+  constructor(private httpClient: HttpClient) {
+    this.carrito = [];
 
-  getAll() {
-    return this.arrProductos
-  }
 
-  getByCategoria(pCategoria: string) {
-    const resultado = this.arrProductos.filter(producto => producto.fk_categoria === pCategoria);
-    return resultado;
+    this.baseUrl = 'http://localhost:3000/api'
 
   }
 
+  //METODO OBTENER TODOS LOS PRODUCTOS
+  getAll(pPage = 1, pLimit = 12): Promise<Producto[]> {
+    return this.httpClient.get<Producto[]>(`${this.baseUrl}/productos?limit=${pLimit}&page=${pPage}`).toPromise();
+  }
+
+  //METODO BUSCAR POR CATEGORIA
+  getByCategoria(pCategoria: string): Promise<Producto[]> {
+    //const resultado = this.arrProductos.filter(producto => producto.fk_categoria === pCategoria);
+    return this.httpClient.get<Producto[]>(`${this.baseUrl}/productos/categorias/${pCategoria}`).toPromise();
+
+  }
+
+  //METODO BUSCAR POR ID
   getById(pId: number) {
-    return this.arrProductos.find(producto => producto.id === pId);
+    return this.httpClient.get<Producto[]>(`${this.baseUrl}/productos/${pId}`).toPromise();
   }
 
-  createCart() {
 
+  //METODO AGREGAR PRODUCTO AL CARRITO
+  addProduct(pProducto: Producto) {
+    const carritoLocal = JSON.parse(localStorage.getItem('carrito'));
+
+    if (carritoLocal) {
+      carritoLocal.push(pProducto)
+      localStorage.setItem('carrito', JSON.stringify(carritoLocal));
+    } else {
+      this.carrito.push(pProducto)
+      localStorage.setItem('carrito', JSON.stringify(this.carrito));
+    }
   }
 
-  addProduct(productoId: number) {
-
-  }
+  //METODO OBTENER TODO EL CARRITO
   getCart() {
+    const carritoLocal = JSON.parse(localStorage.getItem('carrito'))
+    const numeropedido = 'pedido_' + Date.now();
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })
+    }
+    let result;
+    console.log(carritoLocal)
+    for (let producto of carritoLocal) {
 
-  }
+      const item = {
+        numero_pedido: numeropedido,
+        fk_usuario: 5,
+        fk_articulo: producto.id
+      }
 
+      result = this.httpClient.post<any[]>(`${this.baseUrl}/pedidos`, item, httpOptions).toPromise();
+      if (result) {
+        this.httpClient.put(`${this.baseUrl}/productos/disponibilidad/${producto.id}`, { disponible: 0 }).toPromise();
+      };
+    };
+    return result
+
+  };
+
+
+  //METODO BUSCAR POR PALABRA
   getByWord(pWord) {
-    const resultado = this.arrProductos.filter(producto => producto.descripcion === pWord || producto.titulo === pWord)
-    return resultado;
+
+    return this.httpClient.get<Producto[]>(`${this.baseUrl}/productos/search/${pWord}`).toPromise();
   }
 
 }

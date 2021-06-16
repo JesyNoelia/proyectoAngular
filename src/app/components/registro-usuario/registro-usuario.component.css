@@ -6,6 +6,10 @@
 .form-control{
     border-radius:1rem;
 }
+.registroTitulo{
+    font-family: 'Mountains of Christmas', cursive;
+    text-align: center;
+}
 
 .btnRegistro{
     width: 30%;

@@ -26,13 +26,13 @@ export class AppComponent {
 
     switch (this.path) {
       case '/form':
-        return '../../../assets/imagenes/libroabierto.jpg';
+        return '../../../assets/imagenes/cuadradosazules.png';
       case '/login':
-        return '../../../assets/imagenes/libroclip2.jpg';
+        return '../../../assets/imagenes/circulosnaranjas.png';
       case '/registro':
-        return '../../../assets/imagenes/lapizamarillo.jpg';
+        return '../../../assets/imagenes/triangulosverdes.png';
       case '/contacto':
-        return '../../../assets/imagenes/libros.jpg';
+        return '../../../assets/imagenes/lineasvioletas.png';
 
 
     }

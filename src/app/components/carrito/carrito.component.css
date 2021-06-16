@@ -1,0 +1,56 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+  
+}
+
+
+.card{
+    margin: 10px;
+}
+
+.price{
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.btnComprar{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin: 10px;
+    width: 100%;
+}
+
+.imagen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen img{
+    display: block;
+    width: 180px;
+    height: 180px;
+    margin:20px 0;
+    border-radius: 10px;
+}
+
+.cardCarrito{
+    width: 69vh;
+    height: 32.5vh;
+}
+
+
+
+@media(max-width: 500px){
+ .imagen img{
+    width: 150px;
+    height: 150px;
+}
+}
+
+
+

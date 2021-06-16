@@ -1,0 +1,70 @@
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { Producto } from 'src/app/interfaces/producto.interface';
+import { ProductoService } from 'src/app/services/producto.service';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2'
+
+
+@Component({
+  selector: 'app-carrito',
+  templateUrl: './carrito.component.html',
+  styleUrls: ['./carrito.component.css']
+})
+export class CarritoComponent implements OnInit {
+
+  productos: Producto[];
+  private baseUrl: string;
+  total: number;
+
+
+  constructor(private productoService: ProductoService, private httpClient: HttpClient, private router: Router) {
+    this.baseUrl = 'http://localhost:3000/api'
+    this.productos = []
+  };
+
+  async ngOnInit() {
+    const carritoLocal = JSON.parse(localStorage.getItem('carrito'))
+    this.productos = carritoLocal;
+    this.total = this.sumarCarrito();
+  };
+
+  async onClickComprar() {
+    const carritoLocal = JSON.parse(localStorage.getItem('carrito'))
+    const response = await this.productoService.getCart();
+    console.log(response);
+    if (response) {
+      localStorage.clear();
+      Swal.fire('Muchas Gracias por tu compra', '', 'success')
+      this.router.navigate(['/productos'])
+    };
+  };
+
+  onClickVaciar() {
+    localStorage.removeItem('carrito');
+    window.location.reload();
+  };
+
+  onClickEliminar(pProductoId) {
+    console.log(pProductoId)
+    const carrito = JSON.parse(localStorage.getItem('carrito'));
+    const productosCarrito = carrito.filter(producto => producto.id !== pProductoId.id)
+
+    localStorage.setItem('carrito', JSON.stringify(productosCarrito))
+    window.location.reload();
+  };
+
+  //SUMAR CARRITO
+  sumarCarrito() {
+    let resultado = 0;
+    for (let producto of this.productos) {
+      resultado += producto.precio;
+    }
+    return resultado;
+  };
+
+
+
+
+
+};

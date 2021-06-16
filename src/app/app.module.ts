@@ -15,6 +15,9 @@ import { FormularioProductoComponent } from './components/formulario-producto/fo
 import { CardProductoComponent } from './components/card-producto/card-producto.component';
 import { CardHomeComponent } from './components/card-home/card-home.component';
 import { MapaColesComponent } from './components/mapa-coles/mapa-coles.component';
+import { CarritoComponent } from './components/carrito/carrito.component';
+import { ListaProductosComponent } from './components/lista-productos/lista-productos.component';
+
 
 
 @NgModule({
@@ -31,6 +34,9 @@ import { MapaColesComponent } from './components/mapa-coles/mapa-coles.component
     CardProductoComponent,
     CardHomeComponent,
     MapaColesComponent,
+    CarritoComponent,
+    ListaProductosComponent,
+
 
   ],
   imports: [
