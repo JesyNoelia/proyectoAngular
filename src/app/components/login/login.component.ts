@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   formulario: FormGroup;
 
-  constructor(private usuarioService: UsuarioService) {
+  constructor(private usuarioService: UsuarioService, private router: Router) {
     this.formulario = new FormGroup({
       email: new FormControl(),
       password: new FormControl()
@@ -24,7 +25,8 @@ export class LoginComponent implements OnInit {
   async onSubmit() {
     const response = await this.usuarioService.login(this.formulario.value);
     if (response) {
-      alert('usuario correcto');
+      this.router.navigate(['/perfil']);
+      this.formulario.reset();
     } else {
       alert('errror');
     }

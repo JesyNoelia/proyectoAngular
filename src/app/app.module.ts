@@ -15,6 +15,7 @@ import { FormularioProductoComponent } from './components/formulario-producto/fo
 import { CardProductoComponent } from './components/card-producto/card-producto.component';
 import { CardHomeComponent } from './components/card-home/card-home.component';
 import { MapaColesComponent } from './components/mapa-coles/mapa-coles.component';
+import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuario.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { MapaColesComponent } from './components/mapa-coles/mapa-coles.component
     CardProductoComponent,
     CardHomeComponent,
     MapaColesComponent,
+    PerfilUsuarioComponent,
 
   ],
   imports: [
