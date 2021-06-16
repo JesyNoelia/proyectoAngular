@@ -18,6 +18,16 @@
                     </div>
 
                     <div class="col-12">
+
+                        <label for="title" class="form-label">Colegio</label>
+
+                        <select class="form-control" formControlName="colegio">
+                            <option value="todos">Selecciona un colegio</option>
+                            <option [value]="colegio.id" *ngFor="let colegio of colegios">{{colegio.nombre}}</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12">
                         <label for="email" class="form-label">Email</label>
                         <input type="text" class="form-control" id="email" formControlName="email">
                     </div>

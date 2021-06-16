@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ListaProductosComponent } from './components/lista-productos/lista-productos.component';
 import { LoginComponent } from './components/login/login.component';
 import { MapaColesComponent } from './components/mapa-coles/mapa-coles.component';
+import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuario.component';
 import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'registro', component: RegistroUsuarioComponent },
   { path: 'carrito', component: CarritoComponent },
   { path: 'mapas', component: MapaColesComponent },
+  { path: 'perfil', component: PerfilUsuarioComponent },
   { path: '**', redirectTo: '/home' },
 ];
 

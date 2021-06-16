@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-login',
@@ -7,8 +9,10 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
   formulario: FormGroup;
-  constructor() {
+
+  constructor(private usuarioService: UsuarioService, private router: Router) {
     this.formulario = new FormGroup({
       email: new FormControl(),
       password: new FormControl()
@@ -18,8 +22,25 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit() {
+  async onSubmit() {
+    const response = await this.usuarioService.login(this.formulario.value);
+    if (response) {
+      this.router.navigate(['/perfil']);
+      this.formulario.reset();
+    } else {
+      alert('errror');
+    }
+
+    // async onSubmit() {
+    //   const response = await this.usuarioService.login(this.formulario.value);
+    //   if (response['error']) {
+    //     //Swal.fire('Error de login', response['error'], 'error');
+    //   } else {
+    //     //Swal.fire('Login Correcto', 'Ya puedes entrar en la aplicación');
+    //     localStorage.setItem('token', response['token']); //aqui estamos guardando el token en localStorage, para cuando lo necesite. localStorage, esta en la consola del navegador -> application -> localStorage -> localhost:4200 
+    //   }
+
+    // }
 
   }
-
 }

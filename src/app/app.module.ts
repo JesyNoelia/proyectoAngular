@@ -17,6 +17,7 @@ import { CardHomeComponent } from './components/card-home/card-home.component';
 import { MapaColesComponent } from './components/mapa-coles/mapa-coles.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { ListaProductosComponent } from './components/lista-productos/lista-productos.component';
+import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuario.component';
 
 
 
@@ -34,6 +35,7 @@ import { ListaProductosComponent } from './components/lista-productos/lista-prod
     CardProductoComponent,
     CardHomeComponent,
     MapaColesComponent,
+    PerfilUsuarioComponent,
     CarritoComponent,
     ListaProductosComponent,
 
