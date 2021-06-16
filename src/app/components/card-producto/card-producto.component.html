@@ -16,8 +16,10 @@
                 <div class="row">
                     <div class="col-12 piecard pt-2">
                         <h3>{{ producto.precio | currency:'EUR' }}</h3>
-                        <button class="mb-2 carrito" (click)="onClick(producto)"><i
+                        <button class="mb-2 carrito" (click)="onClick(producto)" *ngIf="seleccionado"><i
                                 class="fas fa-shopping-cart"></i></button>
+
+                        <p *ngIf="!seleccionado">Producto añadido al carrito</p>
                     </div>
                 </div>
             </div>

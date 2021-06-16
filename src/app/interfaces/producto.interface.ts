@@ -7,5 +7,6 @@ export interface Producto {
     curso?: string,
     estado: string,
     imagen: string,
+    disponibilidad?: number,
     fk_categoria: string
 }

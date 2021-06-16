@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Producto } from 'src/app/interfaces/producto.interface';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  productos: Producto[];
   constructor() { }
 
   ngOnInit(): void {
   }
 
-}
+  sumarCantidadProductos() {
+    const carritoLocal = JSON.parse(localStorage.getItem('carrito'))
+    let resultado = 0;
+    if (carritoLocal === null) {
+      resultado = 0;
+    } else {
+      resultado += carritoLocal.length
+    }
+    return resultado;
+  };
+};

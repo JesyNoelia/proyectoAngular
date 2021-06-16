@@ -1,6 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { PRODUCTOS } from '../db/productos.db';
 import { Producto } from '../interfaces/producto.interface';
 
 @Injectable({
@@ -8,7 +7,7 @@ import { Producto } from '../interfaces/producto.interface';
 })
 export class ProductoService {
 
-  private arrProductos: Producto[];
+
   private baseUrl: string;
   carrito: Producto[];
   item: Producto;
@@ -16,7 +15,7 @@ export class ProductoService {
   constructor(private httpClient: HttpClient) {
     this.carrito = [];
 
-    this.arrProductos = PRODUCTOS;
+
     this.baseUrl = 'http://localhost:3000/api'
 
   }
@@ -42,42 +41,44 @@ export class ProductoService {
   //METODO AGREGAR PRODUCTO AL CARRITO
   addProduct(pProducto: Producto) {
     const carritoLocal = JSON.parse(localStorage.getItem('carrito'));
+
     if (carritoLocal) {
       carritoLocal.push(pProducto)
       localStorage.setItem('carrito', JSON.stringify(carritoLocal));
     } else {
       this.carrito.push(pProducto)
-      //console.log(this.carrito);
       localStorage.setItem('carrito', JSON.stringify(this.carrito));
     }
-
   }
 
   //METODO OBTENER TODO EL CARRITO
   getCart() {
     const carritoLocal = JSON.parse(localStorage.getItem('carrito'))
-    const pedido = [];
-    for (let producto of carritoLocal) {
-      const item = {
-        fk_usuario: 5,
-        fk_articulo: producto.id
-      }
-      pedido.push(item);
-    }
+    const numeropedido = 'pedido_' + Date.now();
     const httpOptions = {
       headers: new HttpHeaders({
         "Content-Type": "application/json"
       })
-
     }
+    let result;
+    console.log(carritoLocal)
+    for (let producto of carritoLocal) {
 
-    return this.httpClient.post<any[]>(`${this.baseUrl}/pedidos`, pedido, httpOptions).toPromise();
-  }
+      const item = {
+        numero_pedido: numeropedido,
+        fk_usuario: 5,
+        fk_articulo: producto.id
+      }
 
-  //METODO PARA VACIAR EL CARRITO
-  clearCart() {
-    const carritoLocal = localStorage.clear();
-  }
+      result = this.httpClient.post<any[]>(`${this.baseUrl}/pedidos`, item, httpOptions).toPromise();
+      if (result) {
+        this.httpClient.put(`${this.baseUrl}/productos/disponibilidad/${producto.id}`, { disponible: 0 }).toPromise();
+      };
+    };
+    return result
+
+  };
+
 
   //METODO BUSCAR POR PALABRA
   getByWord(pWord) {

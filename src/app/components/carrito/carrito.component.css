@@ -2,7 +2,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    
+  
 }
+
 
 .card{
     margin: 10px;

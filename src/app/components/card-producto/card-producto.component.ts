@@ -12,8 +12,11 @@ export class CardProductoComponent implements OnInit {
 
   @Input() producto: Producto;
 
-  constructor(private productoService: ProductoService) {
+  seleccionado: boolean
 
+
+  constructor(private productoService: ProductoService) {
+    this.seleccionado = true;
   }
 
   ngOnInit(): void {
@@ -21,13 +24,8 @@ export class CardProductoComponent implements OnInit {
   }
 
   async onClick(pProducto: Producto) {
-
-
     const res = await this.productoService.addProduct(pProducto);
-
-    console.log(res);
-
-
-  }
-
+    this.seleccionado = false;
+    //console.log(res);
+  };
 };

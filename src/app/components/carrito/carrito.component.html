@@ -1,12 +1,12 @@
+<div class="btnComprar">
+    <button class="btn btn-info d-flex me-5 " (click)="onClickVaciar()">Vaciar carrito</button>
+    <h3 class="me-5">TOTAL= {{total}} €</h3>
+
+    <button class="btn btn-danger d-flex me-5 " (click)="onClickComprar()">Comprar</button>
+
+</div>
+
 <div class="container">
-
-    <div class="btnComprar">
-        <button class="btn btn-info d-flex me-5 " (click)="onClickVaciar()">Vaciar carrito</button>
-        <button class="btn btn-danger d-flex me-5 " (click)="onClickComprar()">Comprar</button>
-
-    </div>
-
-
     <div class="card cardCarrito" *ngFor="let producto of productos">
 
         <div class="row">
