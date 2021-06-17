@@ -8,10 +8,16 @@ import { Producto } from 'src/app/interfaces/producto.interface';
 })
 export class HeaderComponent implements OnInit {
   productos: Producto[];
-  constructor() { }
+  total: number;
+  constructor() {
 
-  ngOnInit(): void {
   }
+
+  async ngOnInit() {
+    const carritoLocal = JSON.parse(localStorage.getItem('carrito'))
+    this.productos = carritoLocal;
+    this.total = this.sumarCarrito();
+  };
 
   sumarCantidadProductos() {
     const carritoLocal = JSON.parse(localStorage.getItem('carrito'))
@@ -20,6 +26,15 @@ export class HeaderComponent implements OnInit {
       resultado = 0;
     } else {
       resultado += carritoLocal.length
+    }
+    return resultado;
+  };
+
+
+  sumarCarrito() {
+    let resultado = 0;
+    for (let producto of this.productos) {
+      resultado += producto.precio;
     }
     return resultado;
   };

@@ -1,10 +1,19 @@
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="z-index:2">
     <div class="container-fluid">
         <a class="navbar-brand logo" href="#"><img src="../../../assets/imagenes/logo.png" alt=""></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            
+        </button> -->
+        <div id="webapp_cover" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div id="menu_button">
+                <input type="checkbox" id="menu_checkbox">
+                <label for="menu_checkbox" id="menu_label">
+                    <div id="menu_text_bar"></div>
+                </label>
+            </div>
+        </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
@@ -19,30 +28,62 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="btn me-2 mb-2 registro" href="#" [routerLink]="['/login']"><i
+                    <a class="nav-link me-2 mb-2 registro" href="#" [routerLink]="['/login']"><i
                             class="fas fa-user-circle"></i>Inicia
                         Sesión</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn mb-2 registro" href="#" [routerLink]="['/registro']">Registrate</a>
+                    <a class="nav-link mb-2 registro" href="#" [routerLink]="['/registro']">Registrate</a>
                 </li>
                 <!-- <li class="nav-item">
                     <a class="btn mb-2" href="#" [routerLink]="['/carrito']"><i class="fas fa-shopping-cart"></i></a>
                 </li> -->
+
                 <div class="cart-menu align-items-center d-flex">
-                    <div class="sidebar-social">
+                    <div class="sidebar-cart">
                         <ul>
                             <li>
-                                <a href="#" class="cart" title="Carrito" target="_blank" rel="nofollow"
+                                <a href="#" class="cart btn" title="Carrito" target="_blank" rel="nofollow"
                                     [routerLink]="['/carrito']"><i class="fas fa-shopping-cart"></i>
                                     <span id="cart_menu_num" data-action="cart-can"
                                         class="badge rounded-circle">{{sumarCantidadProductos()}}</span>
                                 </a>
                             </li>
                         </ul>
+                        <div class="popover-carrito">
+                            <div class="card cardCarrito" *ngFor="let producto of productos">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h4 class="mt-2">Detalle del Carrito</h4>
+                                    </div>
+
+                                </div>
+                                <div class="row ">
+                                    <div class="col-4">
+                                        <img [src]="producto.imagen" alt="">
+                                    </div>
+                                    <div class="col-5  pt-2">
+                                        <p class="mb-3 mt-3">{{producto.titulo}}</p>
+
+                                    </div>
+                                    <div class="col-3 pt-4">
+                                        <h4>{{ producto.precio}} €</h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h5 class="me-5 text-end">TOTAL= {{total}} €</h5>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-danger" [routerLink]="['/carrito']">Comprar</button>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </ul>
         </div>
     </div>
+
 </nav>
