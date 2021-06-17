@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { login } from '../interfaces/login.interface';
 import { Usuario } from '../interfaces/usuarios.interface';
@@ -17,7 +17,7 @@ export class UsuarioService {
   //POST http://localhost:3000/api/usuarios/registro
 
   registro(pUsuario: Usuario) {
-
+   
     return this.httpClient.post(`${this.baseUrl}registro`, pUsuario).toPromise();
   }
 
@@ -28,6 +28,14 @@ export class UsuarioService {
   }
 
 
+//Metodo que ejecutamos para saber si estamos logados -> comprueba a partir del token en LocalStorage
+  isLogged(){
+    if (localStorage.getItem("token") === null) {
+      return false;
+    }else {
+      return true;
+    }
+  }
 
 }
 
