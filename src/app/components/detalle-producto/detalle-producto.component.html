@@ -1,0 +1,26 @@
+<div class="light" style="margin-top: 120px">
+    <main class="container py-2">
+        <div class="h1 text-center text-dark" id="pageHeaderTitle"></div>
+
+        <article class="postcard light green">
+            <a class="postcard__img_link" href="#">
+                <img class="postcard__img" src="{{productoId.imagen}}" alt="Image Title" />
+            </a>
+            <div class="postcard__text t-dark">
+                <h1 class="postcard__title yellow"><a href="#">{{productoId.titulo}} </a></h1>
+                <div class="postcard__subtitle small">
+
+                </div>
+                <div class="postcard__bar"></div>
+                <div class="postcard__preview-txt">{{productoId.descripcion}}</div>
+                <h4>{{ productoId.precio | currency:'EUR' }}</h4>
+                <ul class="postcard__tagbox">
+                    <li class="tag__item"><a class="mb-2 carrito" (click)="onClick(productoId)" *ngIf="seleccionado"><i
+                                class="fas fa-shopping-cart"></i></a>
+                        <p class="mt-2" *ngIf="!seleccionado">Producto añadido al carrito</p>
+                    </li>
+                </ul>
+            </div>
+        </article>
+    </main>
+</div>
