@@ -34,7 +34,7 @@ export class ProductoService {
 
   //METODO BUSCAR POR ID
   getById(pId: number) {
-    return this.httpClient.get<Producto[]>(`${this.baseUrl}/productos/${pId}`).toPromise();
+    return this.httpClient.get<Producto>(`${this.baseUrl}/productos/${pId}`).toPromise();
   }
 
 
