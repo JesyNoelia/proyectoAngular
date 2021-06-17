@@ -14,24 +14,22 @@ footer{
 .social {
     display: flex;
     flex-direction: row-reverse;
-    
+    font-size: 1.2em;
+    color: rgb(255, 255, 255);
 }
 .social a{
     text-decoration: none;
+     cursor: pointer;
 }
 
 .social li{
     color: rgb(255, 255, 255);
     margin: 20px;
     list-style: none;
-    cursor: pointer;
     font-size: 1.5em;
 }
 
-.social{
-    font-size: 1.2em;
-    color: rgb(255, 255, 255);
-}
+
 .legal{
     background-color: rgba(255,255,255,0);
 }

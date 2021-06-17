@@ -55,6 +55,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <h4 class="mt-2">Detalle del Carrito</h4>
+                                        <div class="divider mb-3"></div>
                                     </div>
 
                                 </div>
@@ -62,17 +63,19 @@
                                     <div class="col-4">
                                         <img [src]="producto.imagen" alt="">
                                     </div>
-                                    <div class="col-5  pt-2">
-                                        <p class="mb-3 mt-3">{{producto.titulo}}</p>
+                                    <div class="col-5 pt-1">
+                                        <p class="mb-3">{{producto.titulo}}</p>
 
                                     </div>
-                                    <div class="col-3 pt-4">
-                                        <h4>{{ producto.precio}} €</h4>
+                                    <div class="col-3 pt-1">
+                                        <h5>{{ producto.precio}} €</h5>
                                     </div>
+
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
-                                        <h5 class="me-5 text-end">TOTAL= {{total}} €</h5>
+                                        <div class="divider mb-3"></div>
+                                        <h5 class="me-2 text-end">Total= {{total}} €</h5>
                                     </div>
                                 </div>
 
