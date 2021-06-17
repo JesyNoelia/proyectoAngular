@@ -1,4 +1,4 @@
-<div class="btnComprar">
+<div class="btnComprar" style="margin-top: 120px">
     <button class="btn btn-info d-flex me-5 " (click)="onClickVaciar()">Vaciar carrito</button>
     <h3 class="me-5">TOTAL= {{total}} €</h3>
 
@@ -6,25 +6,30 @@
 
 </div>
 
-<div class="container">
+<div class="container" style="margin-top: 100px">
     <div class="card cardCarrito" *ngFor="let producto of productos">
 
         <div class="row">
-            <div class="col-6 imagen">
+            <div class="col-3 imagen">
                 <img src="{{producto.imagen}}" alt="">
             </div>
-            <div class="col-6">
+            <div class="col-9">
                 <div class="card-body textoCarrito">
-                    <div>
-                        <h5 class="card-title">{{producto.titulo}}</h5>
-                        <p class="card-text price">{{ producto.precio | currency:'EUR' }}</p>
-                    </div>
-                    <div>
-                        <button class="btn btn-outline-warning btn-sm p-2 bd-highlight"
-                            (click)="onClickEliminar(producto)">Eliminar
-                            del
-                            Carrito
-                            <i class="fas fa-shopping-cart"></i></button>
+                    <div class="row">
+                        <div class="col-6">
+                            <h5 class="card-title">{{producto.titulo}}</h5>
+                            <a href="#" [routerLink]="['/detalle']">Ver Detalle</a>
+                        </div>
+                        <div class="col-3">
+                            <p class="card-text price">{{ producto.precio | currency:'EUR' }}</p>
+                        </div>
+                        <div class="col-3">
+                            <button class="btn btn-outline-warning btn-sm p-2 bd-highlight"
+                                (click)="onClickEliminar(producto)">Eliminar
+                                del
+                                Carrito
+                                <i class="fas fa-shopping-cart"></i></button>
+                        </div>
                     </div>
                 </div>
             </div>
