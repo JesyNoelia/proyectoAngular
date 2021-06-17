@@ -20,20 +20,21 @@
                     <a class="nav-link active me-2" aria-current="page" href="#" [routerLink]="['/home']">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link me-2" href="#" [routerLink]="['/productos']">Productos</a>
+                    <a class="nav-link active me-2" href="#" [routerLink]="['/productos']">Productos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link me-2" href="#" [routerLink]="['/form']"><i class="fas fa-plus-circle"></i>Subir
+                    <a class="nav-link active me-2" href="#" [routerLink]="['/form']"><i
+                            class="fas fa-plus-circle"></i>Subir
                         Producto</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link me-2 mb-2 registro" href="#" [routerLink]="['/login']"><i
+                    <a class="nav-link active me-2 mb-2 registro" href="#" [routerLink]="['/login']"><i
                             class="fas fa-user-circle"></i>Inicia
                         Sesión</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mb-2 registro" href="#" [routerLink]="['/registro']">Registrate</a>
+                    <a class="nav-link active mb-2 registro" href="#" [routerLink]="['/registro']">Registrate</a>
                 </li>
                 <!-- <li class="nav-item">
                     <a class="btn mb-2" href="#" [routerLink]="['/carrito']"><i class="fas fa-shopping-cart"></i></a>
@@ -75,7 +76,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="divider mb-3"></div>
-                                        <h5 class="me-2 text-end">Total= {{total}} €</h5>
+                                        <h5 class="me-2 text-end">Total= {{total | currency:'EUR'}}</h5>
                                     </div>
                                 </div>
 
