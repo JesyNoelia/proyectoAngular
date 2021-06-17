@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { DetalleProductoComponent } from './components/detalle-producto/detalle-producto.component';
 import { FormularioProductoComponent } from './components/formulario-producto/formulario-producto.component';
 import { HomeComponent } from './components/home/home.component';
 import { ListaProductosComponent } from './components/lista-productos/lista-productos.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
   { path: 'home', component: HomeComponent },
   { path: 'productos', component: ListaProductosComponent },
+  { path: 'detalle/:productoId', component: DetalleProductoComponent },
   { path: 'form', component: FormularioProductoComponent },
   { path: 'contacto', component: ContactoComponent },
   { path: 'login', component: LoginComponent },

@@ -18,6 +18,7 @@ import { MapaColesComponent } from './components/mapa-coles/mapa-coles.component
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { ListaProductosComponent } from './components/lista-productos/lista-productos.component';
 import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuario.component';
+import { DetalleProductoComponent } from './components/detalle-producto/detalle-producto.component';
 
 
 
@@ -38,6 +39,7 @@ import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuar
     PerfilUsuarioComponent,
     CarritoComponent,
     ListaProductosComponent,
+    DetalleProductoComponent,
 
 
   ],

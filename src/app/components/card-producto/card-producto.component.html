@@ -8,10 +8,12 @@
                     </div>
                     <div class="col-6 texto pt-2">
                         <h4 class="mb-3 mt-3">{{producto.titulo}}</h4>
-                        <p class="descripcion">{{producto.descripcion}}</p>
+                        <!--  <p class="descripcion">{{producto.descripcion}}</p>
                         <p *ngIf="(producto.curso)">Curso: {{producto.curso}}</p>
-                        <p *ngIf="(producto.talla)">Talla: {{producto.talla}}</p>
+                        <p *ngIf="(producto.talla)">Talla: {{producto.talla}}</p> -->
+                        <a href="#" [routerLink]="['/detalle/', producto.id]">Ver Detalle</a>
                     </div>
+
                 </div>
                 <div class="row">
                     <div class="col-12 piecard pt-2">
