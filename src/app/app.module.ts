@@ -19,6 +19,7 @@ import { CarritoComponent } from './components/carrito/carrito.component';
 import { ListaProductosComponent } from './components/lista-productos/lista-productos.component';
 import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuario.component';
 import { DetalleProductoComponent } from './components/detalle-producto/detalle-producto.component';
+import { ConocenosComponent } from './components/conocenos/conocenos.component';
 
 
 
@@ -40,6 +41,7 @@ import { DetalleProductoComponent } from './components/detalle-producto/detalle-
     CarritoComponent,
     ListaProductosComponent,
     DetalleProductoComponent,
+    ConocenosComponent,
 
 
   ],
