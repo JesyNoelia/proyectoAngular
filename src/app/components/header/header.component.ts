@@ -9,11 +9,12 @@ import {UsuarioService} from '../../services/usuario.service';
 })
 export class HeaderComponent implements OnInit {
   productos: Producto[];
-  constructor(public usuarioService: UsuarioService) { }
   total: number;
-  constructor() {
+  
+  constructor(public usuarioService: UsuarioService) { }
 
-  }
+  
+  
 
   async ngOnInit() {
     const carritoLocal = JSON.parse(localStorage.getItem('carrito'))
