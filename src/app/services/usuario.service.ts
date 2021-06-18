@@ -37,5 +37,23 @@ export class UsuarioService {
     }
   }
 
+
+
+ //METODO BUSCAR USUARIO POR ID
+ //GET http://localhost:3000/api/usuarios/perfil
+
+
+  getById(): any{
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        authorization: localStorage.getItem('token')
+      })
+    }
+    return this.httpClient.get<Usuario>(`${this.baseUrl}perfil`, httpOptions).toPromise();
+  
+  }
+
+
 }
 

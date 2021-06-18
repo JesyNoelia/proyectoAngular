@@ -9,6 +9,8 @@ import { UsuarioService } from '../../services/usuario.service';
 })
 export class HeaderComponent implements OnInit {
   productos: Producto[];
+  total: number;
+  
   constructor(public usuarioService: UsuarioService) { }
   total: number;
 
