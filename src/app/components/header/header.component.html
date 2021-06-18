@@ -17,10 +17,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active me-2" aria-current="page" href="#" [routerLink]="['/home']">Inicio</a>
+                    <a class="nav-link active me-2" aria-current="page" href="#" [routerLink]="['/home']"><i
+                            class="fas fa-home"></i>Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active me-2" href="#" [routerLink]="['/productos']">Productos</a>
+                    <a class="nav-link active me-2" href="#" [routerLink]="['/productos']"><i
+                            class="fas fa-store"></i>Productos</a>
                 </li>
                 <li *ngIf="usuarioService.isLogged()" class="nav-item ">
                     <a class="nav-link me-2 active" href="#" [routerLink]="['/form']"><i
@@ -35,14 +37,16 @@
                 </li>
                 <li class="nav-item" *ngIf="usuarioService.isLogged()">
                     <a class="nav-link active me-2 mb-2 registro" href="#" [routerLink]="['/perfil']"><i
-                            class="fas fa-user-circle"></i>Mi perfil</a>
+                            class="fas fa-house-user"></i>Mi perfil</a>
                 </li>
 
                 <li class="nav-item" *ngIf="!usuarioService.isLogged()">
-                    <a class="nav-link active mb-2 registro" href="#" [routerLink]="['/registro']">Registrate</a>
+                    <a class="nav-link active mb-2 registro" href="#" [routerLink]="['/registro']"><i
+                            class="fas fa-address-book"></i>Registrate</a>
                 </li>
                 <li class="nav-item" *ngIf="usuarioService.isLogged()">
-                    <a class="nav-link active mb-2 desloguearse" (click)="onClick()">Desconectarse</a>
+                    <a class="nav-link active mb-2 desloguearse" (click)="onClick()"><i
+                            class="fas fa-times-circle"></i>Cerrar Sesión</a>
                 </li>
                 <div class="cart-menu align-items-center d-flex">
                     <div class="sidebar-cart">
