@@ -22,8 +22,9 @@
                 <li class="nav-item">
                     <a class="nav-link active me-2" href="#" [routerLink]="['/productos']">Productos</a>
                 </li>
-                <li *ngIf="usuarioService.isLogged()" class="nav-item">
-                    <a class="nav-link me-2" href="#" [routerLink]="['/form']"><i class="fas fa-plus-circle"></i>Subir
+                <li *ngIf="usuarioService.isLogged()" class="nav-item ">
+                    <a class="nav-link me-2 active" href="#" [routerLink]="['/form']"><i
+                            class="fas fa-plus-circle"></i>Subir
                         Producto</a>
                 </li>
 
@@ -32,23 +33,17 @@
                             class="fas fa-user-circle"></i>Inicia
                         Sesión</a>
                 </li>
-
-                 <li class="nav-item" *ngIf="usuarioService.isLogged()">
+                <li class="nav-item" *ngIf="usuarioService.isLogged()">
                     <a class="nav-link active me-2 mb-2 registro" href="#" [routerLink]="['/perfil']"><i
                             class="fas fa-user-circle"></i>Mi perfil</a>
                 </li>
 
-
-
-
-
-                <li class="nav-item">
+                <li class="nav-item" *ngIf="!usuarioService.isLogged()">
                     <a class="nav-link active mb-2 registro" href="#" [routerLink]="['/registro']">Registrate</a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="btn mb-2" href="#" [routerLink]="['/carrito']"><i class="fas fa-shopping-cart"></i></a>
-                </li> -->
-
+                <li class="nav-item" *ngIf="usuarioService.isLogged()">
+                    <a class="nav-link active mb-2 desloguearse" (click)="onClick()">Desconectarse</a>
+                </li>
                 <div class="cart-menu align-items-center d-flex">
                     <div class="sidebar-cart">
                         <ul>
