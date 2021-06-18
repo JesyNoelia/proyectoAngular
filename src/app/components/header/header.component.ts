@@ -71,16 +71,16 @@ export class HeaderComponent implements OnInit {
     })
     swalWithBootstrapButtons.fire({
       title: '¿Estás seguro?',
-      text: "Te vas a desconectar",
+      text: "Estas por cerrar tu sesión",
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'Si, desconectar',
-      cancelButtonText: 'No, continuar',
+      confirmButtonText: 'Cerrar mi sesión',
+      cancelButtonText: 'Continuar en la página',
       reverseButtons: true
     }).then((result) => {
       if (result.isConfirmed) {
         swalWithBootstrapButtons.fire(
-          'Desconectado',
+          'Tu sesión ha sido cerrada',
           '¡Hasta pronto!',
           'success'
         )
