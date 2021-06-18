@@ -14,7 +14,7 @@
                     <div class="row">
                         <div class="col-6">
                             <h5 class="card-title">{{producto.titulo}}</h5>
-                            <a href="#" [routerLink]="['/detalle']">Ver Detalle</a>
+                            <a href="#" [routerLink]="['/detalle/', producto.id]">Ver Detalle</a>
                         </div>
                         <div class="col-3 ">
                             <p class="card-text price">{{ producto.precio | currency:'EUR' }}</p>
