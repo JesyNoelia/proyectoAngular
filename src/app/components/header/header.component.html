@@ -22,7 +22,7 @@
                 <li class="nav-item">
                     <a class="nav-link me-2" href="#" [routerLink]="['/productos']">Productos</a>
                 </li>
-                <li class="nav-item">
+                <li *ngIf="usuarioService.isLogged()" class="nav-item">
                     <a class="nav-link me-2" href="#" [routerLink]="['/form']"><i class="fas fa-plus-circle"></i>Subir
                         Producto</a>
                 </li>

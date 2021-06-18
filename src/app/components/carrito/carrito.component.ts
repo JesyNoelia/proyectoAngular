@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Producto } from 'src/app/interfaces/producto.interface';
 import { ProductoService } from 'src/app/services/producto.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2'
 
@@ -18,7 +19,7 @@ export class CarritoComponent implements OnInit {
   total: number;
 
 
-  constructor(private productoService: ProductoService, private httpClient: HttpClient, private router: Router) {
+  constructor(private productoService: ProductoService, private httpClient: HttpClient, private router: Router, private usuarioService: UsuarioService) {
     this.baseUrl = 'http://localhost:3000/api'
     this.productos = []
   };
@@ -30,14 +31,19 @@ export class CarritoComponent implements OnInit {
   };
 
   async onClickComprar() {
-    const carritoLocal = JSON.parse(localStorage.getItem('carrito'))
+    if(!this.usuarioService.isLogged()){
+      alert('para comprar hay que iniciar sesión');
+    }else {
+      const carritoLocal = JSON.parse(localStorage.getItem('carrito'))
     const response = await this.productoService.getCart();
     console.log(response);
     if (response) {
-      localStorage.clear();
+      localStorage.removeItem('carrito');
       Swal.fire('Muchas Gracias por tu compra', '', 'success')
       this.router.navigate(['/productos'])
     };
+    }
+    
   };
 
   onClickVaciar() {

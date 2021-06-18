@@ -24,23 +24,16 @@ export class LoginComponent implements OnInit {
 
   async onSubmit() {
     const response = await this.usuarioService.login(this.formulario.value);
-    if (response) {
+    if (response['success']) {
+      localStorage.setItem('token', response['token']);
       this.router.navigate(['/perfil']);
       this.formulario.reset();
+
     } else {
       alert('errror');
     }
 
-    // async onSubmit() {
-    //   const response = await this.usuarioService.login(this.formulario.value);
-    //   if (response['error']) {
-    //     //Swal.fire('Error de login', response['error'], 'error');
-    //   } else {
-    //     //Swal.fire('Login Correcto', 'Ya puedes entrar en la aplicación');
-    //     localStorage.setItem('token', response['token']); //aqui estamos guardando el token en localStorage, para cuando lo necesite. localStorage, esta en la consola del navegador -> application -> localStorage -> localhost:4200 
-    //   }
-
-    // }
+   
 
   }
 }

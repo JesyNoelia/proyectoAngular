@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Producto } from 'src/app/interfaces/producto.interface';
+import {UsuarioService} from '../../services/usuario.service';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,7 @@ import { Producto } from 'src/app/interfaces/producto.interface';
 })
 export class HeaderComponent implements OnInit {
   productos: Producto[];
+  constructor(public usuarioService: UsuarioService) { }
   total: number;
   constructor() {
 
