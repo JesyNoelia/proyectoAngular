@@ -17,13 +17,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active me-2" aria-current="page" href="#" [routerLink]="['/home']">Inicio</a>
+                    <a class="nav-link active me-2" aria-current="page" href="#" [routerLink]="['/home']"><i
+                            class="fas fa-home"></i>Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active me-2" href="#" [routerLink]="['/productos']">Productos</a>
+                    <a class="nav-link active me-2" href="#" [routerLink]="['/productos']"><i
+                            class="fas fa-store"></i>Productos</a>
                 </li>
-                <li *ngIf="usuarioService.isLogged()" class="nav-item">
-                    <a class="nav-link me-2" href="#" [routerLink]="['/form']"><i class="fas fa-plus-circle"></i>Subir
+                <li *ngIf="usuarioService.isLogged()" class="nav-item ">
+                    <a class="nav-link me-2 active" href="#" [routerLink]="['/form']"><i
+                            class="fas fa-plus-circle"></i>Subir
                         Producto</a>
                 </li>
 
@@ -32,29 +35,25 @@
                             class="fas fa-user-circle"></i>Inicia
                         Sesión</a>
                 </li>
-
-                 <li class="nav-item" *ngIf="usuarioService.isLogged()">
+                <li class="nav-item" *ngIf="usuarioService.isLogged()">
                     <a class="nav-link active me-2 mb-2 registro" href="#" [routerLink]="['/perfil']"><i
-                            class="fas fa-user-circle"></i>Mi perfil</a>
+                            class="fas fa-house-user"></i>Mi perfil</a>
                 </li>
 
-
-
-
-
-                <li class="nav-item">
-                    <a class="nav-link active mb-2 registro" href="#" [routerLink]="['/registro']">Registrate</a>
+                <li class="nav-item" *ngIf="!usuarioService.isLogged()">
+                    <a class="nav-link active mb-2 registro" href="#" [routerLink]="['/registro']"><i
+                            class="fas fa-address-book"></i>Registrate</a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="btn mb-2" href="#" [routerLink]="['/carrito']"><i class="fas fa-shopping-cart"></i></a>
-                </li> -->
-
+                <li class="nav-item" *ngIf="usuarioService.isLogged()">
+                    <a class="nav-link active mb-2 desloguearse" (click)="onClick()"><i
+                            class="fas fa-times-circle"></i>Cerrar Sesión</a>
+                </li>
                 <div class="cart-menu align-items-center d-flex">
                     <div class="sidebar-cart">
                         <ul>
                             <li>
-                                <a href="#" class="cart btn" title="Carrito" target="_blank" rel="nofollow"
-                                    [routerLink]="['/carrito']"><i class="fas fa-shopping-cart"></i>
+                                <a href="#" class="cart" title="Carrito" rel="nofollow" [routerLink]="['/carrito']"><i
+                                        class="fas fa-shopping-cart"></i>
                                     <span id="cart_menu_num" data-action="cart-can"
                                         class="badge rounded-circle">{{sumarCantidadProductos()}}</span>
                                 </a>

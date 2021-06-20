@@ -19,10 +19,7 @@ body {
   font-weight: initial;
 }
 
-img{
-  width: 300px;
-  height: 300px;
-}
+
 
 .light {
   background: #ffffff;
@@ -45,12 +42,13 @@ a, a:hover {
   flex-wrap: wrap;
   display: flex;
   box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
-  border-radius: 10px;
+  border-radius: 40px;
   margin: 0 0 2rem 0;
   overflow: hidden;
   position: relative;
   color: #ffffff;
-}
+  max-height: 450px;
+  }
 
 .postcard.light {
   background-color: #e1e5ea;
@@ -131,7 +129,7 @@ a, a:hover {
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: linear-gradient(-70deg, #424242, transparent 50%);
+  background-image: linear-gradient(-70deg, #f8f8f8, transparent 50%);
   opacity: 1;
   border-radius: 10px;
 }
