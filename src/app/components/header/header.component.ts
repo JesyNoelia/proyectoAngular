@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   total: number;
   
   constructor(public usuarioService: UsuarioService) { }
-  total: number;
+  
 
 
   async ngOnInit() {

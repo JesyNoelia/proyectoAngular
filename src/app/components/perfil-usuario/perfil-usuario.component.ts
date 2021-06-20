@@ -21,12 +21,14 @@ export class PerfilUsuarioComponent implements OnInit {
 
   async ngOnInit() {
      
-      this.usuario= await this.usuarioService.getById()
+    this.usuario= await this.usuarioService.getById()
 
-      if(this.productosUsuario.length === 0 ){
+    this.productosUsuario= await this.productoService.getArticulosByIdUsuario(this.usuario.id);
+    console.log(this.productosUsuario);
+
+      if(this.productosUsuario.length === 0){
         console.log('no hay productos');
       } else {
-        this.productosUsuario= await this.productoService.getArticulosByIdUsuario(this.usuario.id);
         console.log(this.productosUsuario);
       }
   }

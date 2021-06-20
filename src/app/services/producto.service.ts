@@ -90,7 +90,7 @@ export class ProductoService {
   //GET http://localhost:3000/api/productos/usuario/6
 
 
-  getArticulosByIdUsuario(usuarioId) : Promise<Producto[]>{
+  getArticulosByIdUsuario(usuarioId){
 
     return this.httpClient.get<Producto[]>(`${this.baseUrl}/productos/usuario/${usuarioId}`).toPromise();
 

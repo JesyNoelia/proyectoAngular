@@ -4,15 +4,15 @@
 
         <div class="col-12">
             <div class="usuario">
-                <h3>Bienvenido a tu perfil {{usuario.nombre}} {{usuario.apellidos}}</h3>
+                <h3>Bienvenido a tu perfil {{usuario?.nombre}} {{usuario?.apellidos}}</h3>
             </div>
         </div>
 
         <div class="col-6">
             <div class="carrito">
                 <h1>Tus productos</h1>
-                <p>Datos</p>
-                <p></p>
+                <p *ngFor ="let producto of productosUsuario"></p>
+            
             </div>
         </div>
 
