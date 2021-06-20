@@ -12,11 +12,12 @@ export class CardProductoComponent implements OnInit {
 
   @Input() producto: Producto;
 
-  seleccionado: boolean
-
+  seleccionado: boolean;
+  @Input() carritoVisible: boolean;
 
   constructor(private productoService: ProductoService) {
     this.seleccionado = true;
+    this.carritoVisible = true;
   }
 
   ngOnInit(): void {

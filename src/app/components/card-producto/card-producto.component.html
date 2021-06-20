@@ -23,7 +23,8 @@
                                 Detalle</a>
                         </div>
                         <div class="col-6 d-flex justify-content-center">
-                            <a class="link-warning carrito mb-3" (click)="onClick(producto)" *ngIf="seleccionado">Añadir
+                            <a class="link-warning carrito mb-3" (click)="onClick(producto)"
+                                *ngIf="seleccionado && carritoVisible">Añadir
                                 al
                                 Carrito<i class="fas fa-shopping-cart"></i></a>
 
