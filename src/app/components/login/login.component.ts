@@ -25,15 +25,17 @@ export class LoginComponent implements OnInit {
   async onSubmit() {
     const response = await this.usuarioService.login(this.formulario.value);
     if (response['success']) {
+
       localStorage.setItem('token', response['token']);
+
       this.router.navigate(['/perfil']);
       this.formulario.reset();
-      localStorage.setItem('token', response['token']);
+
     } else {
-      alert('errror');
+      alert('no te has logado');
     }
 
-   
+
 
   }
 }

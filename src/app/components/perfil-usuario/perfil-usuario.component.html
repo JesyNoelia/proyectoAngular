@@ -11,8 +11,10 @@
         <div class="col-6">
             <div class="carrito">
                 <h1>Tus productos</h1>
-                <p *ngFor ="let producto of productosUsuario"></p>
-            
+                <div *ngFor="let producto of productosUsuario">
+                    <app-card-producto [producto]="producto"></app-card-producto>
+                </div>
+
             </div>
         </div>
 

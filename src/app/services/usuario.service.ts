@@ -43,30 +43,30 @@ export class UsuarioService {
   }
 
 
-//Metodo que ejecutamos para saber si estamos logados -> comprueba a partir del token en LocalStorage
-  isLogged(){
+  //Metodo que ejecutamos para saber si estamos logados -> comprueba a partir del token en LocalStorage
+  isLogged() {
     if (localStorage.getItem("token") === null) {
       return false;
-    }else {
+    } else {
       return true;
     }
   }
 
 
 
- //METODO BUSCAR USUARIO POR ID
- //GET http://localhost:3000/api/usuarios/perfil
+  //METODO BUSCAR USUARIO POR ID
+  //GET http://localhost:3000/api/usuarios/perfil
 
 
-  getById(): any{
+  getById(): any {
 
     const httpOptions = {
       headers: new HttpHeaders({
         authorization: localStorage.getItem('token')
       })
     }
-    return this.httpClient.get<Usuario>(`${this.baseUrl}perfil`, httpOptions).toPromise();
-  
+    return this.httpClient.get<Usuario>(`${this.baseUrl}/perfil`, httpOptions).toPromise();
+
   }
 
 

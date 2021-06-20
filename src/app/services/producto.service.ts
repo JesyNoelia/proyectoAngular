@@ -86,11 +86,12 @@ export class ProductoService {
     return this.httpClient.get<Producto[]>(`${this.baseUrl}/productos/search/${pWord}`).toPromise();
   }
 
-   //Método productod por Id de Usuario
+
+  //Método productod por Id de Usuario
   //GET http://localhost:3000/api/productos/usuario/6
 
 
-  getArticulosByIdUsuario(usuarioId){
+  getArticulosByIdUsuario(usuarioId) {
 
     return this.httpClient.get<Producto[]>(`${this.baseUrl}/productos/usuario/${usuarioId}`).toPromise();
 
