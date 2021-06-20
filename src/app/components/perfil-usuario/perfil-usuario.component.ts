@@ -16,23 +16,23 @@ export class PerfilUsuarioComponent implements OnInit {
   productosUsuario: Producto[];
 
   constructor(private usuarioService: UsuarioService, private productoService: ProductoService) {
-  
+
   }
 
   async ngOnInit() {
-     
-    this.usuario= await this.usuarioService.getById()
 
-    this.productosUsuario= await this.productoService.getArticulosByIdUsuario(this.usuario.id);
+    this.usuario = await this.usuarioService.getById()
+
+    this.productosUsuario = await this.productoService.getArticulosByUsuario();
     console.log(this.productosUsuario);
 
-      if(this.productosUsuario.length === 0){
-        console.log('no hay productos');
-      } else {
-        console.log(this.productosUsuario);
-      }
+    if (this.productosUsuario.length === 0) {
+      console.log('no hay productos');
+    } else {
+      console.log(this.productosUsuario);
+    }
   }
 
- 
+
 
 }

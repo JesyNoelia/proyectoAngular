@@ -12,7 +12,7 @@
             <div class="carrito">
                 <h1>Tus productos</h1>
                 <div *ngFor="let producto of productosUsuario">
-                    <app-card-producto [producto]="producto"></app-card-producto>
+                    <app-card-producto [producto]="producto" [carritoVisible]="false"></app-card-producto>
                 </div>
 
             </div>
@@ -20,11 +20,10 @@
 
         <div class="col-6">
             <div class="carrito">
-                <h1>Tus compras</h1>
-                <p>Datos</p>
+                <h1>Tu carrito</h1>
+                <app-carrito></app-carrito>
             </div>
         </div>
-
     </div>
 
 </div>
