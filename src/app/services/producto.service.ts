@@ -88,12 +88,18 @@ export class ProductoService {
 
 
   //Método productod por Id de Usuario
-  //GET http://localhost:3000/api/productos/usuario/6
+  //GET http://localhost:3000/api/productos/usuario/
 
 
-  getArticulosByIdUsuario(usuarioId) {
+  getArticulosByUsuario() {
 
-    return this.httpClient.get<Producto[]>(`${this.baseUrl}/productos/usuario/${usuarioId}`).toPromise();
+    const httpOptions = {
+      headers: new HttpHeaders({
+        authorization: localStorage.getItem('token')
+      })
+    }
+
+    return this.httpClient.get<Producto[]>(`${this.baseUrl}/productos/usuario`, httpOptions).toPromise();
 
   }
 
