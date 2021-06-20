@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('token', response['token']);
       this.router.navigate(['/perfil']);
       this.formulario.reset();
-
+      localStorage.setItem('token', response['token']);
     } else {
       alert('errror');
     }

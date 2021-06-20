@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { login } from '../interfaces/login.interface';
+import { Producto } from '../interfaces/producto.interface';
 import { Usuario } from '../interfaces/usuarios.interface';
 
 @Injectable({
@@ -10,21 +11,35 @@ export class UsuarioService {
   private baseUrl: string;
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = 'http://localhost:3000/api/usuarios/';
+    this.baseUrl = 'http://localhost:3000/api/usuarios';
   }
+
+
+
+  // getAll(): Promise<Producto[]> {
+  //   //esto es necesario para que te permita ver todos, porque ahora con el token va a dejar
+  //   const httpOptions = {
+  //     headers: new HttpHeaders({
+  //       authorization: localStorage.getItem('token')
+  //     }) //tengo que pasarle al return esta const 
+  //   }
+  //   //
+  //   return this.httpClient.get<Producto[]>(`${this.baseUrl}/perfil`, httpOptions).toPromise();
+  // }
+
 
 
   //POST http://localhost:3000/api/usuarios/registro
 
   registro(pUsuario: Usuario) {
-   
-    return this.httpClient.post(`${this.baseUrl}registro`, pUsuario).toPromise();
+
+    return this.httpClient.post(`${this.baseUrl}/registro`, pUsuario).toPromise();
   }
 
   //POST http://localhost:3000/api/usuarios/login
 
   login(pLogin: login) {
-    return this.httpClient.post(`${this.baseUrl}login`, pLogin).toPromise();
+    return this.httpClient.post(`${this.baseUrl}/login`, pLogin).toPromise();
   }
 
 
