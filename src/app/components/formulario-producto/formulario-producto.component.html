@@ -1,53 +1,106 @@
-<div class="container" id="lapices" style="margin-top: 160px;">
+<div class="container" id="lapices" style="margin-top: 140px;">
     <h3 class="mb-2 productoTitulo">Ingresa tu producto</h3>
     <div class="row">
         <div class="col-12">
 
-            <form class="formulario">
+            <form class="formulario" [formGroup]="formulario" (ngSubmit)="onSubmit()">
                 <div class="col-12 mb-1">
                     <label for="" class="form-label">Título</label>
-                    <input type="text" id="titulo" class="form-control">
+                    <input type="text" id="titulo" class="form-control" formControlName="titulo">
+                    <p class="error" *ngIf="checkControl('titulo', 'required')">
+                        El campo título es obligatorio.
+                    </p>
                 </div>
                 <div class="col-12 mb-1">
                     <label for="" class="form-label">Categoría</label>
-                    <select name="" id="" class="form-control">
-                        <option value=""></option>
-                        <option value="uniformes">Uniformes</option>
-                        <option value="material_escolar">Material escolar</option>
-                        <option value="material_deportivo">Material deportivo</option>
-                        <option value="libros">Libros</option>
-                        <option value="tecnologia">Tecnología</option>
+                    <select name="" id="" class="form-control" formControlName="categoria">
+                        <option value="todos">Selecciona una Categoría</option>
+                        <option [value]="categoria.id" *ngFor="let categoria of categorias">{{categoria.nombre}}
+                        </option>
+
                     </select>
+                    <p class="error" *ngIf="checkControl('categoria', 'required')">
+                        El campo categoría es obligatorio.
+                    </p>
                 </div>
                 <div class="col-12 mb-1">
                     <label for="" class="form-label">Descripción</label>
-                    <input type="text" id="descripcion" maxlength="15" class="form-control">
-
+                    <input type="text" id="descripcion" class="form-control" formControlName="descripcion">
+                    <p class="error" *ngIf="checkControl('descripcion', 'required')">
+                        El campo descripción es obligatorio.
+                    </p>
                 </div>
-                <div class="col-12 mb-1">
-                    <label for="" class="form-label">Imagen</label>
-                    <input type="file" id="imagen" class="form-control">
+                <div class="row">
+                    <div class="col-6 mb-1">
+                        <label for="" class="form-label">Imagen</label>
+                        <input type="file" id="imagen" name="imagen" class="form-control" formControlName="imagen"
+                            (change)="onChange($event)">
+                        <p class="error" *ngIf="checkControl('imagen', 'required')">
+                            El campo Imagen es obligatorio.
+                        </p>
+                    </div>
+                    <div class="col-6 mb-1">
+                        <label for="" class="form-label">Estado</label>
+                        <select name="estado" id="estado" class="form-control" formControlName="estado">
+                            <option value="Sin Estrenar">Sin Estrenar</option>
+                            <option value="Como Nuevo">Como Nuevo</option>
+                            <option value="En buen estado">En buen estado</option>
+                            <option value="En condiciones aceptables">En condiciones aceptables</option>
+                            <option value="Muy usado">Muy usado</option>
+                        </select>
+
+                        <p class="error" *ngIf="checkControl('estado', 'required')">
+                            El campo estado es obligatorio.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-12">
+
+                    <label for="title" class="form-label">Colegio</label>
+
+                    <select class="form-control" formControlName="colegio">
+                        <option value="todos">Selecciona un colegio</option>
+                        <option [value]="colegio.id" *ngFor="let colegio of colegios">{{colegio.nombre}}</option>
+                    </select>
                 </div>
 
                 <div class="row">
-                    <div class="col-6 mb-1">
+                    <div class="col-4 mb-1">
                         <label for="" class="form-label">Precio</label>
-                        <input type="text" id="precio" class="form-control">
+                        <input type="text" id="precio" class="form-control" formControlName="precio">
+                        <p class="error" *ngIf="checkControl('precio', 'required')">
+                            El campo Precio es obligatorio.
+                        </p>
                     </div>
-                    <div class="col-6 mb-1">
-                        <label for="" class="form-label">Talle</label>
-                        <select name="" id="" class="form-control">
+                    <div class="col-4 mb-1">
+                        <label for="" class="form-label">Curso</label>
+                        <select name="" id="curso" class="form-control" formControlName="curso">
                             <option value=""></option>
-                            <option value="3">3 años</option>
-                            <option value="4">4 años</option>
-                            <option value="5">5 años</option>
-                            <option value="6">6 años</option>
-                            <option value="7">7 años</option>
+                            <option value="1_infantil">1º Infantil</option>
+                            <option value="2_infantil">2º Infantil</option>
+                            <option value="3_infantil">3º Infantil</option>
+                            <option value="1_primaria">1º Primaria</option>
+                            <option value="2_primaria">2º Primaria</option>
+                            <option value="3_primaria">3º Primaria</option>
+                            <option value="4_primaria">4º Primaria</option>
+                            <option value="5_primaria">5º Primaria</option>
+                            <option value="6_primaria">6º Primaria</option>
+                            <option value="1_eso">1º ESO</option>
+                            <option value="2_eso">2º ESO</option>
+                            <option value="3_eso">3º ESO</option>
+                            <option value="4_eso">4º ESO</option>
+
                         </select>
+                    </div>
+                    <div class="col-4 mb-1">
+                        <label for="" class="form-label">Talle</label>
+                        <input type="text" name="" id="talle" class="form-control" formControlName="talla">
                     </div>
                 </div>
 
-                <button class="btn btn-warning btn-lg my-4 btnProducto" type="submit">Enviar</button>
+                <button class="btn btn-warning btn-lg my-4 btnProducto" type="submit"
+                    [disabled]="!formulario.valid">Enviar</button>
             </form>
         </div>
     </div>

@@ -25,8 +25,14 @@ export class CardProductoComponent implements OnInit {
   }
 
   async onClick(pProducto: Producto) {
-    const res = await this.productoService.addProduct(pProducto);
-    this.seleccionado = false;
+
     //console.log(res);
+    if (this.productoService.checkIdProducto(pProducto.id)) {
+      alert('El producto ya se encuentra en el carrito')
+    } else {
+      const res = await this.productoService.addProduct(pProducto);
+      this.seleccionado = false;
+    }
+
   };
 };

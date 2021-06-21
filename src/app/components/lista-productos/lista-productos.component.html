@@ -1,4 +1,4 @@
-<nav class="navbar navbar-light fixed-top" style="background-color: #ffe657; margin-top: 100px; z-index:1">
+<nav class="navbar navbar-light fixed-top" style="background-color: #ffe657; margin-top: 100px; z-index:5">
     <div class="container-fluid">
         <div class="row buscador">
 
@@ -29,11 +29,14 @@
     <div class=" botones">
         <button class="btn btn-info me-2" (click)="onClickBtn(false)">Anterior</button>
         <button class="btn btn-info me-2" (click)="onClickBtn(true)">Siguiente</button>
-
     </div>
     <div class="row">
         <div class="col-lg-6 col-md-12 " *ngFor="let product of arrProductos">
             <app-card-producto [producto]="product"></app-card-producto>
         </div>
+    </div>
+    <div class=" botones">
+        <button class="btn btn-info me-2" (click)="onClickBtn(false)">Anterior</button>
+        <button class="btn btn-info me-2" (click)="onClickBtn(true)">Siguiente</button>
     </div>
 </div>
