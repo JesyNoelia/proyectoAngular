@@ -14,8 +14,6 @@ export class ProductoService {
 
   constructor(private httpClient: HttpClient) {
     this.carrito = [];
-
-
     this.baseUrl = 'http://localhost:3000/api'
 
   }
@@ -61,7 +59,7 @@ export class ProductoService {
       })
     }
     let result;
-    console.log(carritoLocal)
+    //console.log(carritoLocal)
     for (let producto of carritoLocal) {
 
       const item = {
@@ -72,10 +70,12 @@ export class ProductoService {
 
       result = this.httpClient.post<any[]>(`${this.baseUrl}/pedidos`, item, httpOptions).toPromise();
       if (result) {
-        this.httpClient.put(`${this.baseUrl}/productos/disponibilidad/${producto.id}`, { disponible: 0 }).toPromise();
+        this.httpClient.put(`${this.baseUrl}/productos/disponibilidad/${producto.id}`, {
+          disponible: 0
+        }).toPromise();
       };
     };
-    return result
+    return result;
 
   };
 
@@ -86,9 +86,12 @@ export class ProductoService {
     return this.httpClient.get<Producto[]>(`${this.baseUrl}/productos/search/${pWord}`).toPromise();
   }
 
+  //Método productod por Id de Usuario
+  //GET http://localhost:3000/api/productos/usuario/6
 
   //Método productod por Id de Usuario
   //GET http://localhost:3000/api/productos/usuario/
+
 
 
   getArticulosByUsuario() {
@@ -99,8 +102,32 @@ export class ProductoService {
       })
     }
 
-    return this.httpClient.get<Producto[]>(`${this.baseUrl}/productos/usuario`, httpOptions).toPromise();
+    return this.httpClient.get<Producto[]>(`${this.baseUrl}/productos/usuario`,
+      httpOptions).toPromise();
 
   }
 
+  create(fd: FormData) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        authorization: localStorage.getItem('token')
+      })
+    }
+    return this.httpClient.post<Producto>(`${this.baseUrl}/productos`, fd, httpOptions).toPromise();
+  }
+
+  checkIdProducto(pIdProducto) {
+    if (!localStorage.getItem('carrito')) {
+      return false;
+    }
+    const carritoLocal = JSON.parse(localStorage.getItem('carrito'))
+    const resultado = carritoLocal.findIndex((producto) => producto.id === pIdProducto)
+    if (resultado !== -1) {
+      return true;
+
+    } else {
+      return false;
+
+    }
+  }
 }

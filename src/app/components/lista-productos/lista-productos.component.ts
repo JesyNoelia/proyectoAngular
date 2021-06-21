@@ -30,6 +30,8 @@ export class ListaProductosComponent implements OnInit {
       })
 
       .catch(error => console.log(error));
+
+
   }
 
   async onChange($event) {

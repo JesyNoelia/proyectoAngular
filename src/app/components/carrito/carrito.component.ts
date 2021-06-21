@@ -31,19 +31,19 @@ export class CarritoComponent implements OnInit {
   };
 
   async onClickComprar() {
-    if(!this.usuarioService.isLogged()){
-      alert('para comprar hay que iniciar sesión');
-    }else {
+    if (!this.usuarioService.isLogged()) {
+      alert('Para comprar hay que iniciar sesión');
+    } else {
       const carritoLocal = JSON.parse(localStorage.getItem('carrito'))
-    const response = await this.productoService.getCart();
-    console.log(response);
-    if (response) {
-      localStorage.removeItem('carrito');
-      Swal.fire('Muchas Gracias por tu compra', '', 'success')
-      this.router.navigate(['/productos'])
-    };
+      const response = await this.productoService.getCart();
+      //console.log(response);
+      if (response) {
+        localStorage.removeItem('carrito');
+        Swal.fire('Muchas Gracias por tu compra', '', 'success')
+        this.router.navigate(['/productos'])
+      };
     }
-    
+
   };
 
   onClickVaciar() {
@@ -68,9 +68,4 @@ export class CarritoComponent implements OnInit {
     }
     return resultado;
   };
-
-
-
-
-
 };
