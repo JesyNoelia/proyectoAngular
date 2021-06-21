@@ -35,4 +35,8 @@ export class CardProductoComponent implements OnInit {
     }
 
   };
+
+  onClickFavorito(pProducto: Producto) {
+
+  }
 };

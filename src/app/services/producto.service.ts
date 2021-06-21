@@ -14,8 +14,6 @@ export class ProductoService {
 
   constructor(private httpClient: HttpClient) {
     this.carrito = [];
-
-
     this.baseUrl = 'http://localhost:3000/api'
 
   }
