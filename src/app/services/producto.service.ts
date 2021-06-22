@@ -12,6 +12,7 @@ export class ProductoService {
   carrito: Producto[];
   item: Producto;
 
+
   constructor(private httpClient: HttpClient) {
     this.carrito = [];
     this.baseUrl = 'http://localhost:3000/api'
@@ -58,13 +59,14 @@ export class ProductoService {
         "Content-Type": "application/json"
       })
     }
+
+
     let result;
     //console.log(carritoLocal)
     for (let producto of carritoLocal) {
 
       const item = {
         numero_pedido: numeropedido,
-        fk_usuario: 5,
         fk_articulo: producto.id
       }
 
