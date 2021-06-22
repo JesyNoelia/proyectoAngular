@@ -6,6 +6,7 @@ import { cole } from 'src/app/interfaces/colegio.iterface';
 import { ColegioService } from 'src/app/services/colegio.service';
 import { Categoria } from 'src/app/interfaces/categoria.interface';
 import { CategoriasService } from 'src/app/services/categorias.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-formulario-producto',
@@ -73,6 +74,7 @@ export class FormularioProductoComponent implements OnInit {
     // Delegamos el envío del formulario en el servicios
     this.productoService.create(fd).then(result => {
       this.router.navigate(['/productos']);
+      Swal.fire('Has ingresado un nuevo articulo, ya puedes verlo en tu perfil', '', 'success')
     })
   }
 
