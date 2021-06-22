@@ -22,9 +22,7 @@
 }
 
 .btnComprar{
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+  
     margin: 10px;
     width: 100%;
 }
@@ -53,3 +51,4 @@
     overflow:hidden;
    
 }
+

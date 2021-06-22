@@ -1,17 +1,18 @@
-<div class="container" style="margin-top: 160px;">
+<!-- <div class="container" style="margin-top: 160px;">
 
     <div class="row">
 
         <div class="col-12">
             <div class="usuario">
-                <h3>Bienvenido a tu perfil {{usuario?.nombre}} {{usuario?.apellidos}}</h3>
+                <h3>Hola {{usuario?.nombre}} {{usuario?.apellidos}}!</h3>
+
             </div>
         </div>
         <div class="row">
             <div class="col-lg-6 col-sm-12">
                 <div class="carrito">
                     <h1>Tus productos</h1>
-                    <div *ngFor="let producto of productosUsuario">
+                    <div class="cardSize" *ngFor="let producto of productosUsuario">
                         <app-card-producto [producto]="producto" [carritoVisible]="false" [modificarVisible]="true">
                         </app-card-producto>
                     </div>
@@ -27,5 +28,53 @@
             </div>
         </div>
 
+    </div>
+</div> -->
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <div class="barraLateral">
+                <div class="sidebar-container">
+                    <div class="sidebar-logo">
+                        Perfil de Usuario
+                    </div>
+                    <ul class="sidebar-navigation">
+                        <li class="home">
+                            <a href="#">
+                                <i class="fa fa-home" aria-hidden="true"></i> Mi perfil
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-list-alt" aria-hidden="true"></i> Tus productos en venta
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-users" aria-hidden="true"></i> Productos Favoritos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" [routerLink]="['/perfil/carrito']">
+                                <i class="fa fa-cog" aria-hidden="true"></i> Tus compras
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="content-container">
+                    <div class="container-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="col-9">
+
+            <div class="cardSize" *ngFor="let producto of productosUsuario">
+                <app-card-producto [producto]="producto" [carritoVisible]="false" [modificarVisible]="true">
+                </app-card-producto>
+            </div>
+        </div> -->
     </div>
 </div>

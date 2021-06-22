@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CarritoPerfilComponent } from './components/carrito-perfil/carrito-perfil.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { ConocenosComponent } from './components/conocenos/conocenos.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'perfil', component: PerfilUsuarioComponent },
   { path: 'equipo', component: ConocenosComponent },
   { path: 'modificar/:productoId', component: ModificarProductoComponent },
+  { path: 'perfil/carrito', component: CarritoPerfilComponent },
   { path: '**', redirectTo: '/home' },
 ];
 
