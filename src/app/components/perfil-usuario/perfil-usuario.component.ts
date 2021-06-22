@@ -15,6 +15,8 @@ export class PerfilUsuarioComponent implements OnInit {
   usuario: Usuario;
   productosUsuario: Producto[];
 
+
+
   constructor(private usuarioService: UsuarioService, private productoService: ProductoService) {
 
   }
@@ -31,6 +33,8 @@ export class PerfilUsuarioComponent implements OnInit {
     } else {
       console.log(this.productosUsuario);
     }
+
+
   }
 
 

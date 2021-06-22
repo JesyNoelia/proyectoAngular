@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ListaProductosComponent } from './components/lista-productos/lista-productos.component';
 import { LoginComponent } from './components/login/login.component';
 import { MapaColesComponent } from './components/mapa-coles/mapa-coles.component';
+import { ModificarProductoComponent } from './components/modificar-producto/modificar-producto.component';
 import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuario.component';
 import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
 
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'mapas', component: MapaColesComponent },
   { path: 'perfil', component: PerfilUsuarioComponent },
   { path: 'equipo', component: ConocenosComponent },
+  { path: 'modificar/:productoId', component: ModificarProductoComponent },
   { path: '**', redirectTo: '/home' },
 ];
 

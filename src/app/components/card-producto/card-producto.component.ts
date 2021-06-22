@@ -14,10 +14,14 @@ export class CardProductoComponent implements OnInit {
 
   seleccionado: boolean;
   @Input() carritoVisible: boolean;
+  @Input() modificarVisible: boolean;
+
 
   constructor(private productoService: ProductoService) {
     this.seleccionado = true;
     this.carritoVisible = true;
+    this.modificarVisible = false;
+
   }
 
   ngOnInit(): void {

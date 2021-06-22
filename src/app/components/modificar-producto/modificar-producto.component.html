@@ -1,0 +1,55 @@
+<div class="container" id="lapices" style="margin-top: 160px;">
+    <h3 class="mb-2 productoTitulo">Modifica tu producto</h3>
+    <div class="row">
+        <div class="col-12">
+
+            <form class="formulario" *ngIf="formulario" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+                <div class="col-12 mb-1">
+                    <label for="" class="form-label">Título</label>
+                    <input type="text" id="titulo" class="form-control" formControlName="titulo">
+                </div>
+                <div class="col-12 mb-1">
+                    <label for="" class="form-label">Categoría</label>
+                    <select class="form-control" formControlName="categoria">
+                        <option value=""></option>
+                        <option value="uniformes">Uniformes</option>
+                        <option value="material_escolar">Material escolar</option>
+                        <option value="material_deportivo">Material deportivo</option>
+                        <option value="libros">Libros</option>
+                        <option value="tecnologia">Tecnología</option>
+                    </select>
+                </div>
+                <div class="col-12 mb-1">
+                    <label for="" class="form-label">Descripción</label>
+                    <input type="text" id="descripcion" maxlength="15" class="form-control"
+                        formControlName="descripcion">
+
+                </div>
+                <!-- <div class="col-12 mb-1">
+                    <label for="" class="form-label">Imagen</label>
+                    <input type="file" id="imagen" class="form-control" formControlName="imagen">
+                </div> -->
+
+                <div class="row">
+                    <div class="col-6 mb-1">
+                        <label for="" class="form-label">Precio</label>
+                        <input type="text" id="precio" class="form-control" formControlName="precio">
+                    </div>
+                    <div class="col-6 mb-1">
+                        <label for="" class="form-label">Talla</label>
+                        <select class="form-control" formControlName="talla">
+                            <option value=""></option>
+                            <option value="3">3 años</option>
+                            <option value="4">4 años</option>
+                            <option value="5">5 años</option>
+                            <option value="6">6 años</option>
+                            <option value="7">7 años</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="btn btn-warning btn-lg my-4 btnProducto" type="submit">Modificar</button>
+            </form>
+        </div>
+    </div>
+</div>

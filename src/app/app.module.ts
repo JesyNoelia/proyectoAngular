@@ -20,6 +20,7 @@ import { ListaProductosComponent } from './components/lista-productos/lista-prod
 import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuario.component';
 import { DetalleProductoComponent } from './components/detalle-producto/detalle-producto.component';
 import { ConocenosComponent } from './components/conocenos/conocenos.component';
+import { ModificarProductoComponent } from './components/modificar-producto/modificar-producto.component';
 
 
 
@@ -42,6 +43,7 @@ import { ConocenosComponent } from './components/conocenos/conocenos.component';
     ListaProductosComponent,
     DetalleProductoComponent,
     ConocenosComponent,
+    ModificarProductoComponent,
 
 
   ],

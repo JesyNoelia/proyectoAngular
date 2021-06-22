@@ -130,4 +130,22 @@ export class ProductoService {
 
     }
   }
+  //METODO CREAR PRODUCTO
+  //POST http://localhost:3000/api/productos
+
+  crearProducto(pProducto: Producto) {
+
+    return this.httpClient.post(`${this.baseUrl}/productos`, pProducto).toPromise();
+  }
+
+
+
+  //Método modificar producto
+  ////PUT http://localhost:3000/api/productos/5
+
+  modificarProducto(pId, pProducto) {
+
+    return this.httpClient.put(`${this.baseUrl}/productos/${pId}`, pProducto).toPromise();
+  }
+
 }

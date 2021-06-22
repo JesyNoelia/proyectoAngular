@@ -33,6 +33,8 @@
                                     *ngIf="seleccionado && carritoVisible">Añadir
                                     al
                                     Carrito<i class="fas fa-shopping-cart"></i></a>
+                            <a class="link-warning carrito mb-3" [routerLink]="['/modificar', producto.id]"
+                                *ngIf="modificarVisible">Modificar producto</a>
 
                                 <p *ngIf="!seleccionado">Producto añadido al carrito</p>
                             </div>
