@@ -63,6 +63,10 @@
                         <option value="todos">Selecciona un colegio</option>
                         <option [value]="colegio.id" *ngFor="let colegio of colegios">{{colegio.nombre}}</option>
                     </select>
+                    <p class="error" *ngIf="checkControl('colegio', 'required')">
+                        El campo colegio es obligatorio.
+                    </p>
+
                 </div>
 
                 <div class="row">

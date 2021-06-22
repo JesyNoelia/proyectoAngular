@@ -143,6 +143,7 @@ export class ProductoService {
   //Método modificar producto
   ////PUT http://localhost:3000/api/productos/5
 
+
   modificarProducto(pId, pProducto) {
 
     return this.httpClient.put(`${this.baseUrl}/productos/${pId}`, pProducto).toPromise();

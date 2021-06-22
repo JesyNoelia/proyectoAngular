@@ -8,5 +8,6 @@ export interface Producto {
     estado: string,
     imagen: string,
     disponibilidad?: number,
-    fk_categoria: string
+    fk_categoria: string,
+    fk_colegio: string,
 }
