@@ -23,7 +23,7 @@
                                 Detalle</a>
                         </div>
                         <div class="col-8">
-                            <a class="d-flex justify-content-center text-center me-2"
+                            <a class="d-flex justify-content-center text-center favorito"
                                 (click)="onClickFavorito(producto)"><i class="fas fa-star mt-1 me-2"></i>Añadir
                                 a la lista de deseos</a>
                         </div>
@@ -33,8 +33,8 @@
                                     *ngIf="seleccionado && carritoVisible">Añadir
                                     al
                                     Carrito<i class="fas fa-shopping-cart"></i></a>
-                            <a class="link-warning carrito mb-3" [routerLink]="['/modificar', producto.id]"
-                                *ngIf="modificarVisible">Modificar producto</a>
+                                <a class="link-warning carrito mb-3" [routerLink]="['/modificar', producto.id]"
+                                    *ngIf="modificarVisible">Modificar producto</a>
 
                                 <p *ngIf="!seleccionado">Producto añadido al carrito</p>
                             </div>
