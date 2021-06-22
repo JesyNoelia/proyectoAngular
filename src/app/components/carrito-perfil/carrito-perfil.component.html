@@ -1,0 +1,40 @@
+<div class="btnComprar">
+    <button class="btn btn-info d-flex" (click)="onClickVaciar()">Vaciar carrito</button>
+</div>
+
+
+<div class="card cardCarrito" *ngFor="let producto of productos">
+
+    <div class="row">
+        <div class="col-3 imagen">
+            <img src="{{producto.imagen}}" alt="">
+        </div>
+        <div class="col-9">
+            <div class="card-body textoCarrito">
+                <div class="row">
+                    <div class="col-6">
+                        <h5 class="card-title">{{producto.titulo}}</h5>
+                        <a href="#" [routerLink]="['/detalle/', producto.id]">Ver Detalle</a>
+                    </div>
+                    <div class="col-3 ">
+                        <p class="card-text price">{{ producto.precio | currency:'EUR' }}</p>
+                    </div>
+                    <div class="col-3">
+                        <button class="btn btn-outline-warning btn-sm p-2 bd-highlight me-2"
+                            (click)="onClickEliminar(producto)">Eliminar
+                            <i class="fas fa-shopping-cart"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="btnComprar" style="margin-top: 50px">
+
+    <h3 class="me-5">Total= {{total | currency:'EUR'}}</h3>
+
+    <button class="btn btn-danger d-flex" (click)="onClickComprar()">Comprar</button>
+
+</div>

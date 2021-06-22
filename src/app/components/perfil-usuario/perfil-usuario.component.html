@@ -7,24 +7,25 @@
                 <h3>Bienvenido a tu perfil {{usuario?.nombre}} {{usuario?.apellidos}}</h3>
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-6 col-sm-12">
+                <div class="carrito">
+                    <h1>Tus productos</h1>
+                    <div *ngFor="let producto of productosUsuario">
+                        <app-card-producto [producto]="producto" [carritoVisible]="false" [modificarVisible]="true">
+                        </app-card-producto>
+                    </div>
 
-        <div class="col-6">
-            <div class="carrito">
-                <h1>Tus productos</h1>
-                <div *ngFor="let producto of productosUsuario">
-                    <app-card-producto [producto]="producto" [carritoVisible]="false" [modificarVisible]="true">
-                    </app-card-producto>
                 </div>
+            </div>
 
+            <div class="col-lg-6 col-sm-12">
+                <div class="carrito">
+                    <h1>Tu carrito</h1>
+                    <app-carrito-perfil></app-carrito-perfil>
+                </div>
             </div>
         </div>
 
-        <div class="col-6">
-            <div class="carrito">
-                <h1>Tu carrito</h1>
-                <app-carrito></app-carrito>
-            </div>
-        </div>
     </div>
-
 </div>
