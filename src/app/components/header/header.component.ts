@@ -42,7 +42,7 @@ export class HeaderComponent implements OnInit {
 
   sumarCarrito() {
     let resultado = 0;
-    console.log(this.productos);
+    //console.log(this.productos);
 
     for (let producto of this.productos) {
       resultado += producto.precio;

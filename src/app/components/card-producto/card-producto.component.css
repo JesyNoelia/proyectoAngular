@@ -17,11 +17,15 @@ body {
   border-radius: 3px;
   padding: 2.5px 10px;
   margin: 0 5px 5px 0;
-  cursor: default;
+  cursor: pointer;
   user-select: none;
   transition: background-color 0.3s;
 }
 
+.favorito{
+  cursor: pointer;
+  color: green;
+}
 
 .cards {
   display: grid;

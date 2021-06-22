@@ -24,11 +24,12 @@ export class FavoritosService {
         authorization: localStorage.getItem('token')
       })
     }
-
     const item = {
       fk_articulo: pProducto.id
     }
     const result = this.httpClient.post(`${this.baseUrl}`, item, httpOptions).toPromise();
+    console.log(result);
+
     return result;
   }
 }

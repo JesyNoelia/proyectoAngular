@@ -44,6 +44,6 @@ export class CardProductoComponent implements OnInit {
 
   async onClickFavorito(pProducto: Producto) {
     this.favorito = await this.favoritosService.addProductFavorito(pProducto);
-    //console.log(this.favorito);
+    console.log(this.favorito);
   }
 };
