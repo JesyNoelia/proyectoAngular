@@ -1,4 +1,4 @@
-<div class="container">
+<div class="">
     <ul class="cards">
         <li>
             <a class="card">
@@ -15,16 +15,25 @@
                         </div>
                     </div>
                     <p class="card__description">{{producto.descripcion}}</p>
-                    <p class="card__description" *ngIf="(producto.curso)">Curso: {{producto.curso}}</p>
-                    <p class="card__description" *ngIf="(producto.talla)">Talla: {{producto.talla}}</p>
                     <div class="row">
-                        <div class="col-4">
+                        <div class="col-6">
+                            <p class="card__description text-center" *ngIf="(producto.curso)">Curso: {{producto.curso}}
+                            </p>
+                        </div>
+                        <div class="col-6">
+                            <p class="card__description text-center" *ngIf="(producto.talla)">Talla: {{producto.talla}}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-5">
                             <a class="d-flex justify-content-center" [routerLink]="['/detalle/', producto.id]">Ver
                                 Detalle</a>
                         </div>
-                        <div class="col-8">
+                        <div class="col-7">
                             <a class="d-flex justify-content-center text-center favorito"
-                                (click)="onClickFavorito(producto)"><i class="fas fa-star mt-1 me-2"></i>Añadir
+                                (click)="onClickFavorito(producto)"><i class="fas fa-star m-1"></i>Añadir
                                 a la lista de deseos</a>
                         </div>
                         <div class="row">

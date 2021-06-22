@@ -24,3 +24,21 @@ select option{
     color: rgb(255, 141, 47);
 }
 
+.barranav{
+    margin-top: 95px;
+    z-index: 2;
+}
+
+.contenido{
+    margin-top: 160px;
+}
+
+@media(max-width: 992px){
+    .btnBuscar{
+        margin-top: 10px;
+    }
+
+    .contenido{
+        margin-top: 210px;
+    }
+}
