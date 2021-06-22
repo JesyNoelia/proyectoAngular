@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Producto } from '../interfaces/producto.interface';
 
@@ -19,11 +19,16 @@ export class FavoritosService {
 
   //METODO AGREGAR PRODUCTO A FAVORITOS
   addProductFavorito(pProducto: Producto) {
-
-    /* const item = {
-      fk_usuario: 5,
-      fk_articulo: producto.id
+    const httpOptions = {
+      headers: new HttpHeaders({
+        authorization: localStorage.getItem('token')
+      })
     }
-    const result = this.httpClient.post(`${this.baseUrl}`, item).toPromise */
+
+    const item = {
+      fk_articulo: pProducto.id
+    }
+    const result = this.httpClient.post(`${this.baseUrl}`, item, httpOptions).toPromise();
+    return result;
   }
 }

@@ -56,9 +56,10 @@ export class ProductoService {
     const numeropedido = 'pedido_' + Date.now();
     const httpOptions = {
       headers: new HttpHeaders({
-        "Content-Type": "application/json"
+        authorization: localStorage.getItem('token')
       })
     }
+
 
 
     let result;
