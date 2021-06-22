@@ -19,7 +19,12 @@ export class HeaderComponent implements OnInit {
 
   async ngOnInit() {
     const carritoLocal = JSON.parse(localStorage.getItem('carrito'))
-    this.productos = carritoLocal;
+    if (carritoLocal == null) {
+      this.productos = [];
+    } else {
+      this.productos = carritoLocal;
+    }
+
     this.total = this.sumarCarrito();
   };
 
