@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { cole } from 'src/app/interfaces/colegio.iterface';
 import { ColegioService } from 'src/app/services/colegio.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-registro-usuario',
@@ -54,7 +55,7 @@ export class RegistroUsuarioComponent implements OnInit {
 
     if (response) {
 
-      alert('usuario creado');
+      Swal.fire('Usuario creado con éxito', '', 'success')
       this.formulario.reset();
 
     } else (response['error']); {

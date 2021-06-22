@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import { Producto } from 'src/app/interfaces/producto.interface';
+import { FavoritosService } from 'src/app/services/favoritos.service';
 import { ProductoService } from 'src/app/services/producto.service';
 
 @Component({
@@ -15,17 +16,18 @@ export class CardProductoComponent implements OnInit {
   seleccionado: boolean;
   @Input() carritoVisible: boolean;
   @Input() modificarVisible: boolean;
+  favorito: any;
 
 
-  constructor(private productoService: ProductoService) {
+  constructor(private productoService: ProductoService, private favoritosService: FavoritosService) {
     this.seleccionado = true;
     this.carritoVisible = true;
     this.modificarVisible = false;
 
+
   }
 
   ngOnInit(): void {
-    //console.log(this.producto)
   }
 
   async onClick(pProducto: Producto) {
@@ -40,7 +42,8 @@ export class CardProductoComponent implements OnInit {
 
   };
 
-  onClickFavorito(pProducto: Producto) {
-
+  async onClickFavorito(pProducto: Producto) {
+    this.favorito = await this.favoritosService.addProductFavorito(pProducto);
+    //console.log(this.favorito);
   }
 };
