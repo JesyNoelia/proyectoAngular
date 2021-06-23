@@ -16,6 +16,7 @@ export class CardProductoComponent implements OnInit {
   seleccionado: boolean;
   @Input() carritoVisible: boolean;
   @Input() modificarVisible: boolean;
+  @Input() incluidoVisible: boolean;
   favorito: any;
 
 
@@ -23,7 +24,7 @@ export class CardProductoComponent implements OnInit {
     this.seleccionado = true;
     this.carritoVisible = true;
     this.modificarVisible = false;
-
+    this.incluidoVisible = true;
 
   }
 

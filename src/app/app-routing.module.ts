@@ -11,7 +11,9 @@ import { ListaProductosComponent } from './components/lista-productos/lista-prod
 import { LoginComponent } from './components/login/login.component';
 import { MapaColesComponent } from './components/mapa-coles/mapa-coles.component';
 import { ModificarProductoComponent } from './components/modificar-producto/modificar-producto.component';
+import { PerfilDatosComponent } from './components/perfil-datos/perfil-datos.component';
 import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuario.component';
+import { ProductosUsuarioComponent } from './components/productos-usuario/productos-usuario.component';
 import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
 
 const routes: Routes = [
@@ -25,10 +27,16 @@ const routes: Routes = [
   { path: 'registro', component: RegistroUsuarioComponent },
   { path: 'carrito', component: CarritoComponent },
   { path: 'mapas', component: MapaColesComponent },
-  { path: 'perfil', component: PerfilUsuarioComponent },
+  {
+    path: 'perfil', component: PerfilUsuarioComponent, children: [
+      { path: 'productos', component: ProductosUsuarioComponent },
+      { path: 'datos', component: PerfilDatosComponent },
+      { path: 'carrito', component: CarritoPerfilComponent }
+
+    ]
+  },
   { path: 'equipo', component: ConocenosComponent },
   { path: 'modificar/:productoId', component: ModificarProductoComponent },
-  { path: 'perfil/carrito', component: CarritoPerfilComponent },
   { path: '**', redirectTo: '/home' },
 ];
 

@@ -1,0 +1,12 @@
+<div class="carrito">
+    <div class="texto">
+        <h1>Tus productos</h1>
+    </div>
+
+    <div *ngFor="let producto of productosUsuario">
+        <app-card-producto [producto]="producto" [carritoVisible]="false" [modificarVisible]="true"
+            [incluidoVisible]="false">
+        </app-card-producto>
+    </div>
+
+</div>
