@@ -148,8 +148,13 @@ export class ProductoService {
 
 
   modificarProducto(pId, pProducto) {
-
     return this.httpClient.put(`${this.baseUrl}/productos/${pId}`, pProducto).toPromise();
+  }
+
+
+  //metodo para obtener cantidad de productos
+  getInfo(): Promise<any> {
+    return this.httpClient.get<any>(`${this.baseUrl}/productos/info`).toPromise();
   }
 
 }
