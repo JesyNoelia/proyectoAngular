@@ -1,4 +1,6 @@
-<div class="barraLateral">
+<!-- SIDEBAR SOLO VISIBLE DESKTOP -->
+
+<div class="sidebarDesktop">
 
     <div class="sidebar-container">
 
@@ -8,7 +10,7 @@
 
         <ul class="sidebar-navigation">
             <li>
-                <a [routerLink]="['perfil/datos']">
+                <a [routerLink]="['/perfil/datos']">
                     <i class="fa fa-home" aria-hidden="true"></i> Mi perfil
                 </a>
             </li>
@@ -35,5 +37,37 @@
         <div class="container-fluid">
         </div>
     </div>
+
+</div>
+
+<!-- SIDEBAR SOLO VISIBLE MOVIL -->
+<div class="sidebarMovil">
+
+    <ul class="sidebar-navigation d-flex">
+        <li>
+            <a [routerLink]="['/perfil/datos']">
+                <i class="fa fa-home" aria-hidden="true"></i> Mi perfil
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="['/perfil/productos']">
+                <i class="fas fa-list-alt" aria-hidden="true"></i> Mis productos
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="['/perfil/favoritos']">
+                <i class="fa fa-users" aria-hidden="true"></i> Favoritos
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="['/perfil/carrito']">
+                <i class="fa fa-cog" aria-hidden="true"></i> Mis compras
+            </a>
+        </li>
+
+    </ul>
+
+
+
 
 </div>

@@ -1,5 +1,6 @@
 .todo{
     min-height: 500px;
+    margin-top:150px;
 }
 
 .texto{
@@ -78,3 +79,24 @@ font-size: 20px;
 
 }
 
+@media(max-width:425px){
+    .col-3 p{
+    font-size: 15px;
+}
+.row h5{
+    font-size: 15px;
+}
+.imagen img{
+    display: block;
+    width: 80%;
+}
+.row{
+    width: 100%;
+}
+
+}
+@media(max-width:770px){
+.todo{
+    margin-top: 50px;
+}
+}
