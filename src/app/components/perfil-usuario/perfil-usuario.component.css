@@ -1,122 +1,97 @@
-/* .usuario{
-    
+ .usuario{
+  height: 400px;
   margin: 20px;
   padding:20px;
+  border:1px solid lightgrey;
+  border-radius: 10px;
+   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+   display:flex;
+   
+
+}
+.parte1{
+  display:flex;
+  flex-direction: column;
+  width: 30%;
 }
 
-.usuario h3{
-
+.imagen{
+  background-color: lightpink;
+  flex-basis: 70%;
+  border-radius: 10px;
   
-  /*layout
-	position: relative;
-	max-width: 20em;
-	
-	/*looks
-	background-color: rgb(214, 240, 240);
-	padding: 1.125em 1.5em;
-	font-size: 2em;
-	border-radius: 1rem;
-  box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
+ 
+}
+.boton{
+ flex-basis: 30%;
+ margin: 0 auto;
+ display: flex;
+ justify-content: center;
+ align-items: center;
 }
 
-/* .usuario h3::before{
-/*layout
-	content: '';
-	position: absolute;
-	width: 0;
-	height: 0;
-	bottom: 100%;
-	left: 1.5em; /*offset should move with padding of parent
-	border: .75rem solid transparent;
-	border-top: none;
+.texto{
+margin:10px;
+padding:10px;
 
-/*looks
-	border-bottom-color: rgb(214, 240, 240);
-	filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, .1));
-} */
+}
 
-.derecha{
-	background-color: lightgreen;
-width: 100%;
+.texto h3{
+ font-size: 30px;
+ border-bottom: 1px solid lightgrey;
+ padding-bottom:20px;
+ font-family: 'Alfa Slab One', cursive;
+}
+
+.texto p{
+  font-size: 30px;
+  font-family: 'Indie Flower', cursive;
 }
 
 
-.barraLateral{
-	height: 400px;
-	margin-top:100px;
-}
 
-.sidebar-container {
-  position: fixed;
-  width: 220px;
-  height:100%;
-  left: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  background: #200be6;
-  color: #fff;
-}
-.content-container {
-  padding-top: 20px;
-}
-.sidebar-logo {
-  padding: 10px 15px 10px 30px;
-  font-size: 20px;
-  background-color: #ff9b29;
-  margin-bottom: 50px;
-}
-.sidebar-navigation {
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
+
+
+
+
+
+/* BOTON MODIFICAR PERFIL */
+button {
+  border: 4px solid black;
+  padding: 16px 24px;
   position: relative;
-}
-.sidebar-navigation li {
   background-color: transparent;
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  line-height: 20px;
 }
-.sidebar-navigation li a {
-  padding: 10px 15px 10px 30px;
-  display: block;
-  color: #fff;
-  text-decoration: none;
-}
-.sidebar-navigation li .fa {
-  margin-right: 10px;
-}
-.sidebar-navigation li a:active,
-.sidebar-navigation li a:hover,
-.sidebar-navigation li a:focus {
-  text-decoration: none;
-  outline: none;
-}
-.sidebar-navigation li::before {
-  background-color: #44a925;
-  position: absolute;
-  content: '';
-  height: 100%;
-  left: 0;
-  top: 0;
-  -webkit-transition: width 0.2s ease-in;
-  transition: width 0.2s ease-in;
-  width: 3px;
-  z-index: -1;
-}
-.sidebar-navigation li:hover::before {
-  width: 100%;
-}
-.sidebar-navigation .header {
-  font-size: 12px;
+button span {
+  font-size: 10px;
   text-transform: uppercase;
-  background-color: #e6750b;
-  padding: 10px 15px 10px 90px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 5px;
 }
-.sidebar-navigation .header::before {
-  background-color: transparent;
+button:after {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height: 100%;
+  width: 100%;
+  background-color: #ffea00;
+  content: "";
+  z-index: -1;
+  transition: transform 0.2s ease-in, width 0.2s ease-out 0.2s;
 }
-.content-container {
-  padding-left: 220px;
+button:hover:after {
+  transform: translate(-10px, -10px);
+  width: calc(100% - 10px);
 }
+button:active:after {
+  width: 100%;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+
+
