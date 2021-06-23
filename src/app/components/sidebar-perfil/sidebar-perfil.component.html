@@ -1,38 +1,39 @@
-<div class="container">
-    <div class="row">
-        <div class="col-3">
-            <div class="barraLateral">
-                <div class="sidebar-container">
-                    <div class="sidebar-logo">
-                        Perfil de Usuario
-                    </div>
-                    <ul class="sidebar-navigation">
-                        <li class="home">
-                            <a href="#">
-                                <i class="fa fa-home" aria-hidden="true"></i> Mi perfil
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fas fa-list-alt" aria-hidden="true"></i> Tus productos en venta
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-users" aria-hidden="true"></i> Productos Favoritos
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" [routerLink]="['/perfil/carrito']">
-                                <i class="fa fa-cog" aria-hidden="true"></i> Tus compras
-                            </a>
-                        </li>
+<div class="barraLateral">
 
-                    </ul>
-                </div>
-                <div class="content-container">
-                    <div class="container-fluid">
-                    </div>
-                </div>
-            </div>
+    <div class="sidebar-container">
+
+        <div class="sidebar-logo">
+            Perfil de Usuario
         </div>
+
+        <ul class="sidebar-navigation">
+            <li>
+                <a [routerLink]="['/perfil/datos']">
+                    <i class="fa fa-home" aria-hidden="true"></i> Mi perfil
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="['/perfil/productos']">
+                    <i class="fas fa-list-alt" aria-hidden="true"></i> Mis productos
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-users" aria-hidden="true"></i> Favoritos
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="['/perfil/carrito']">
+                    <i class="fa fa-cog" aria-hidden="true"></i> Mis compras
+                </a>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="content-container">
+        <div class="container-fluid">
+        </div>
+    </div>
+
+</div>

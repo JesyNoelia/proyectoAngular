@@ -1,18 +1,19 @@
 
 .barraLateral{
 	height: 200px;
-	margin-top:100px;
+	margin-top:150px;
+
 }
 
 .sidebar-container {
   position: fixed;
   width: 220px;
-  height:100%;
+  height:50%;
   left: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  background: #200be6;
-  color: #fff;
+  background: #7d96cc;
+  color: rgb(27, 25, 25);
 }
 .content-container {
   padding-top: 20px;
@@ -20,7 +21,7 @@
 .sidebar-logo {
   padding: 10px 15px 10px 30px;
   font-size: 20px;
-  background-color: #ff9b29;
+  background-color: #92ddaf;
   margin-bottom: 50px;
 }
 .sidebar-navigation {
@@ -39,7 +40,7 @@
 .sidebar-navigation li a {
   padding: 10px 15px 10px 30px;
   display: block;
-  color: #fff;
+  color: rgb(27, 25, 25);
   text-decoration: none;
 }
 .sidebar-navigation li .fa {
@@ -52,7 +53,7 @@
   outline: none;
 }
 .sidebar-navigation li::before {
-  background-color: #44a925;
+  background-color:#92ddaf;
   position: absolute;
   content: '';
   height: 100%;

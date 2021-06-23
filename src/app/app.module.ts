@@ -24,6 +24,7 @@ import { ModificarProductoComponent } from './components/modificar-producto/modi
 import { CarritoPerfilComponent } from './components/carrito-perfil/carrito-perfil.component';
 import { SidebarPerfilComponent } from './components/sidebar-perfil/sidebar-perfil.component';
 import { ProductosUsuarioComponent } from './components/productos-usuario/productos-usuario.component';
+import { PerfilDatosComponent } from './components/perfil-datos/perfil-datos.component';
 
 
 
@@ -50,6 +51,7 @@ import { ProductosUsuarioComponent } from './components/productos-usuario/produc
     CarritoPerfilComponent,
     SidebarPerfilComponent,
     ProductosUsuarioComponent,
+    PerfilDatosComponent,
 
 
   ],

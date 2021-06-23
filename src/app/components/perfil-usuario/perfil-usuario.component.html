@@ -7,43 +7,8 @@
         </div>
 
         <div class="col-9" style="margin-top: 160px;">
-
-            <div class="usuario">
-                <div class="parte1">
-                    <div class="imagen"></div>
-                    <div class="boton">
-                        <button>
-                            <span>Modificar</span>
-                        </button>
-                    </div>
-                </div>
-                <div class="texto">
-                    <h3>Bienvenid@ a tu perfil</h3>
-                    <p>Hola {{usuario?.nombre}} {{usuario?.apellidos}}!</p>
-                </div>
-
-
-            </div>
+            <router-outlet></router-outlet>
         </div>
-        <!-- <div class="row">
-            <div class="col-lg-6 col-sm-12">
-                <div class="carrito">
-                    <h1>Tus productos</h1>
-                    <div class="cardSize" *ngFor="let producto of productosUsuario">
-                        <app-card-producto [producto]="producto" [carritoVisible]="false" [modificarVisible]="true">
-                        </app-card-producto>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="col-lg-6 col-sm-12">
-                <div class="carrito">
-                    <h1>Tu carrito</h1>
-                    <app-carrito-perfil></app-carrito-perfil>
-                </div>
-            </div>
-        </div> -->
 
     </div>
 </div>

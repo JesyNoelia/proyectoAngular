@@ -1,0 +1,52 @@
+
+ 
+ 
+ .usuario{
+  height: 400px;
+  margin: 20px;
+  padding:20px;
+  border:1px solid lightgrey;
+  border-radius: 10px;
+   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+   display:flex;
+   
+
+}
+.parte1{
+  display:flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.imagen{
+  background-color: lightpink;
+  flex-basis: 70%;
+  border-radius: 10px;
+  
+ 
+}
+.boton{
+ flex-basis: 30%;
+ margin: 0 auto;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.texto{
+margin:10px;
+padding:10px;
+
+}
+
+.texto h3{
+ font-size: 30px;
+ border-bottom: 1px solid lightgrey;
+ padding-bottom:20px;
+ font-family: 'Alfa Slab One', cursive;
+}
+
+.texto p{
+  font-size: 30px;
+  font-family: 'Indie Flower', cursive;
+}

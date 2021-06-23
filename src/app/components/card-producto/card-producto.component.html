@@ -33,7 +33,8 @@
                         </div>
                         <div class="col-7">
                             <a class="d-flex justify-content-center text-center favorito"
-                                (click)="onClickFavorito(producto)"><i class="fas fa-star m-1"></i>Añadir
+                                (click)="onClickFavorito(producto)" *ngIf="incluidoVisible"><i
+                                    class="fas fa-star m-1"></i>Añadir
                                 a la lista de deseos</a>
                         </div>
                         <div class="row">
