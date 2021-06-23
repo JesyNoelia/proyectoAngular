@@ -1,23 +1,35 @@
 <div class="usuario">
-    <div class="parte1">
-        <div class="imagen"></div>
-        <div class="boton">
-            <button>
-                <span>Modificar</span>
-            </button>
+    <div class="row">
+        <div class="col-lg-4 col-md-12">
+            <div class="parte1">
+
+                <div class="imagen"></div>
+                <div></div>
+
+            </div>
+        </div>
+        <div class="col-lg-8 col-md-12">
+            <div class="texto">
+                <h3>Bienvenid@ a tu perfil</h3>
+                <h4>Hola {{usuario?.nombre}} {{usuario?.apellidos}}!</h4>
+                <p>Desde éste espacio podrás:</p>
+                <ul>
+                    <li>Gestionar y modificar tus productos</li>
+                    <li>Añadir tus favoritos</li>
+                    <li>Comprar los productos que necesites</li>
+                </ul>
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="boton">
+                    <button>
+                        <span>Modificar</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="texto">
-        <h3>Bienvenid@ a tu perfil</h3>
-        <h4>Hola {{usuario?.nombre}} {{usuario?.apellidos}}!</h4>
-        <p>Desde éste espacio podrás:</p>
-        <ul>
-            <li>Gestionar y modificar tus productos</li>
-            <li>Añadir tus favoritos</li>
-            <li>Comprar los productos que necesites</li>
-        </ul>
-
-    </div>
-
-
 </div>
