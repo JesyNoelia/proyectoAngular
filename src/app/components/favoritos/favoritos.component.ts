@@ -49,7 +49,6 @@ export class FavoritosComponent implements OnInit {
 
 
   generarArrBucle() {
-
     if (this.favoritosUsuario.length === 0) {
 
       return [];
