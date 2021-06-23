@@ -33,8 +33,10 @@
 <div class="container">
     <div class="contenido">
         <div class=" botones">
-            <button class="btn btn-info me-2 offset" (click)="onClickBtn(false)">Anterior</button>
-            <button class="btn btn-info me-2 offset" (click)="onClickBtn(true)">Siguiente</button>
+            <button class="btn btn-info me-2 offset" (click)="onClickBtn(false)"
+                [disabled]="currentPage === 1">Anterior</button>
+            <button class="btn btn-info me-2 offset" (click)="onClickBtn(true)"
+                [disabled]="currentPage >= limitePaginas.numPaginas">Siguiente</button>
         </div>
         <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let product of arrProductos">
@@ -42,8 +44,10 @@
             </div>
         </div>
         <div class=" botones">
-            <button class="btn btn-info me-2 offset" (click)="onClickBtn(false)">Anterior</button>
-            <button class="btn btn-info me-2 offset" (click)="onClickBtn(true)">Siguiente</button>
+            <button class="btn btn-info me-2 offset" (click)="onClickBtn(false)"
+                [disabled]="currentPage === 1">Anterior</button>
+            <button class="btn btn-info me-2 offset" (click)="onClickBtn(true)"
+                [disabled]="currentPage >= limitePaginas.numPaginas">Siguiente</button>
         </div>
     </div>
 </div>
