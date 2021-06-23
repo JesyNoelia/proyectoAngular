@@ -32,13 +32,12 @@ const routes: Routes = [
     path: 'perfil', component: PerfilUsuarioComponent, children: [
       { path: 'productos', component: ProductosUsuarioComponent },
       { path: 'datos', component: PerfilDatosComponent },
-      { path: 'carrito', component: CarritoPerfilComponent }
-
+      { path: 'carrito', component: CarritoPerfilComponent },
+      { path: 'favoritos', component: FavoritosComponent }
     ]
   },
   { path: 'equipo', component: ConocenosComponent },
   { path: 'modificar/:productoId', component: ModificarProductoComponent },
-  { path: 'favoritos', component: FavoritosComponent },
   { path: '**', redirectTo: '/home' },
 ];
 
