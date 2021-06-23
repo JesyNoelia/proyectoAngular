@@ -45,10 +45,11 @@ export class ListaProductosComponent implements OnInit {
   async onClick() {
     if (this.search === "") {
       this.arrProductos = await this.productoService.getAll();
+
     } else {
-      Swal.fire('Lo sentimos', 'Los criterios de búsqueda no coinciden con los productos disponibles', 'error')
       this.arrProductos = await this.productoService.getByWord(this.search)
       if (this.arrProductos.length === 0) {
+        Swal.fire('Lo sentimos', 'Los criterios de búsqueda no coinciden con los productos disponibles', 'error')
         this.arrProductos = await this.productoService.getAll();
       }
     }
