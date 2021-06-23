@@ -21,6 +21,7 @@ import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuar
 import { DetalleProductoComponent } from './components/detalle-producto/detalle-producto.component';
 import { ConocenosComponent } from './components/conocenos/conocenos.component';
 import { ModificarProductoComponent } from './components/modificar-producto/modificar-producto.component';
+import { FavoritosComponent } from './components/favoritos/favoritos.component';
 
 
 
@@ -44,6 +45,7 @@ import { ModificarProductoComponent } from './components/modificar-producto/modi
     DetalleProductoComponent,
     ConocenosComponent,
     ModificarProductoComponent,
+    FavoritosComponent,
 
 
   ],

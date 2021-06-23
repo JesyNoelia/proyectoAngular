@@ -26,11 +26,12 @@ select option{
 
 .barranav{
     margin-top: 95px;
-    z-index: 2;
+    
 }
 
 .contenido{
     margin-top: 160px;
+    z-index: -1;
 }
 
 @media(max-width: 992px){
