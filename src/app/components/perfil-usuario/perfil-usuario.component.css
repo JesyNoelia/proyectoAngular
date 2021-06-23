@@ -38,6 +38,10 @@
 .derecha{
 	background-color: lightgreen;
 width: 100%;
+.carrito{
+   margin:20px;
+   padding:20px;
+    width: 500px;
 }
 
 
