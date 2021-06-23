@@ -3,7 +3,7 @@
         <div class="row buscador">
 
             <div class="col-lg-6 col-sm-12 categorias">
-                <select class="form-select " (change)="onChange($event)">
+                <select class="form-select" (change)="onChange($event)">
                     <option value="" selected>Todas las categorias</option>
                     <option value="Uniformes">Uniformes</option>
                     <option value="Material Escolar">Material Escolar</option>
@@ -13,12 +13,19 @@
                     <option value="Juguetes Didácticos">Juguetes Didácticos</option>
                 </select>
             </div>
-            <div class="col-lg-6 col-sm-12 buscadorTexto">
+            <div class="col-lg-6 col-sm-12">
 
-                <input class="form-control btnBuscar" type="search" placeholder="Buscar" aria-label="Search"
-                    [(ngModel)]="search">
-                <button class="btn btn-outline-danger d-flex btnBuscar" type="submit" (click)="onClick()"><i
-                        class="fas fa-search"></i>Buscar</button>
+                <!-- <input class="form-control btnBuscar" type="search" placeholder="Buscar" aria-label="Search"
+                    [(ngModel)]="search"> -->
+                <!-- <button class="btn btn-outline-danger d-flex btnBuscar" type="submit" (click)="onClick()"><i
+                        class="fas fa-search"></i>Buscar</button> -->
+                <form action="" class="search-bar">
+                    <input type="search" name="search" pattern=".*\S.*" required [(ngModel)]="search">
+                    <button class="search-btn" type="submit" (click)="onClick()">
+                        <span>Bucar</span>
+                    </button>
+                </form>
+
             </div>
         </div>
     </div>
