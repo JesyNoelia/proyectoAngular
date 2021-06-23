@@ -32,4 +32,14 @@ export class FavoritosService {
 
     return result;
   }
+
+  //OBTENER TODOS LOS FAVORITOS POR ID DE USUARIO
+  getAllFavoritos() {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        authorization: localStorage.getItem('token')
+      })
+    };
+    return this.httpClient.get<Producto[]>(`${this.baseUrl}`, httpOptions).toPromise();
+  }
 }

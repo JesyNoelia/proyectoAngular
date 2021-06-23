@@ -5,6 +5,7 @@ import { CarritoComponent } from './components/carrito/carrito.component';
 import { ConocenosComponent } from './components/conocenos/conocenos.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { DetalleProductoComponent } from './components/detalle-producto/detalle-producto.component';
+import { FavoritosComponent } from './components/favoritos/favoritos.component';
 import { FormularioProductoComponent } from './components/formulario-producto/formulario-producto.component';
 import { HomeComponent } from './components/home/home.component';
 import { ListaProductosComponent } from './components/lista-productos/lista-productos.component';
@@ -37,6 +38,7 @@ const routes: Routes = [
   },
   { path: 'equipo', component: ConocenosComponent },
   { path: 'modificar/:productoId', component: ModificarProductoComponent },
+  { path: 'favoritos', component: FavoritosComponent },
   { path: '**', redirectTo: '/home' },
 ];
 

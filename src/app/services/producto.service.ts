@@ -103,12 +103,12 @@ export class ProductoService {
       headers: new HttpHeaders({
         authorization: localStorage.getItem('token')
       })
-    }
+    };
 
     return this.httpClient.get<Producto[]>(`${this.baseUrl}/productos/usuario`,
       httpOptions).toPromise();
 
-  }
+  };
 
   create(fd: FormData) {
     const httpOptions = {

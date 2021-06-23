@@ -11,7 +11,6 @@ import { ProductoService } from 'src/app/services/producto.service';
 export class DetalleProductoComponent implements OnInit {
 
   productoId: Producto;
-
   seleccionado: boolean
 
 
@@ -29,7 +28,6 @@ export class DetalleProductoComponent implements OnInit {
   };
 
   async onClick(pProducto: Producto) {
-
     //console.log(res);
     if (this.productoService.checkIdProducto(pProducto.id)) {
       alert('El producto ya se encuentra en el carrito')
@@ -37,7 +35,5 @@ export class DetalleProductoComponent implements OnInit {
       const res = await this.productoService.addProduct(pProducto);
       this.seleccionado = false;
     }
-
   };
-
 };

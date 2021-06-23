@@ -21,6 +21,7 @@ import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuar
 import { DetalleProductoComponent } from './components/detalle-producto/detalle-producto.component';
 import { ConocenosComponent } from './components/conocenos/conocenos.component';
 import { ModificarProductoComponent } from './components/modificar-producto/modificar-producto.component';
+import { FavoritosComponent } from './components/favoritos/favoritos.component';
 import { CarritoPerfilComponent } from './components/carrito-perfil/carrito-perfil.component';
 import { SidebarPerfilComponent } from './components/sidebar-perfil/sidebar-perfil.component';
 import { ProductosUsuarioComponent } from './components/productos-usuario/productos-usuario.component';
@@ -48,6 +49,7 @@ import { PerfilDatosComponent } from './components/perfil-datos/perfil-datos.com
     DetalleProductoComponent,
     ConocenosComponent,
     ModificarProductoComponent,
+    FavoritosComponent,
     CarritoPerfilComponent,
     SidebarPerfilComponent,
     ProductosUsuarioComponent,

@@ -19,24 +19,24 @@
                     [(ngModel)]="search">
                 <button class="btn btn-outline-danger d-flex btnBuscar" type="submit" (click)="onClick()"><i
                         class="fas fa-search"></i>Buscar</button>
-
             </div>
         </div>
     </div>
 </nav>
-
-<div class="contenido">
-    <div class=" botones">
-        <button class="btn btn-info me-2" (click)="onClickBtn(false)">Anterior</button>
-        <button class="btn btn-info me-2" (click)="onClickBtn(true)">Siguiente</button>
-    </div>
-    <div class="row">
-        <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let product of arrProductos">
-            <app-card-producto [producto]="product"></app-card-producto>
+<div class="container">
+    <div class="contenido">
+        <div class=" botones">
+            <button class="btn btn-info me-2 offset" (click)="onClickBtn(false)">Anterior</button>
+            <button class="btn btn-info me-2 offset" (click)="onClickBtn(true)">Siguiente</button>
         </div>
-    </div>
-    <div class=" botones">
-        <button class="btn btn-info me-2" (click)="onClickBtn(false)">Anterior</button>
-        <button class="btn btn-info me-2" (click)="onClickBtn(true)">Siguiente</button>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let product of arrProductos">
+                <app-card-producto [producto]="product"></app-card-producto>
+            </div>
+        </div>
+        <div class=" botones">
+            <button class="btn btn-info me-2 offset" (click)="onClickBtn(false)">Anterior</button>
+            <button class="btn btn-info me-2 offset" (click)="onClickBtn(true)">Siguiente</button>
+        </div>
     </div>
 </div>
