@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Producto } from 'src/app/interfaces/producto.interface';
 import { ProductoService } from 'src/app/services/producto.service';
@@ -13,14 +14,15 @@ export class ListaProductosComponent implements OnInit {
   arrProductos: Producto[];
   search: string;
   currentPage: number;
+  limitePaginas: any;
 
 
   constructor(private productoService: ProductoService) {
-
-
     this.search = "";
     this.currentPage = 1;
-  }
+    this.limitePaginas = 1;
+
+  };
 
   ngOnInit(): void {
     this.productoService.getAll()
@@ -28,11 +30,8 @@ export class ListaProductosComponent implements OnInit {
         this.arrProductos = response
         //console.log(this.arrProductos);
       })
-
       .catch(error => console.log(error));
-
-
-  }
+  };
 
   async onChange($event) {
     if ($event.target.value === "") {
@@ -55,8 +54,11 @@ export class ListaProductosComponent implements OnInit {
     }
   }
 
-  onClickBtn(siguiente: boolean) {
+  async onClickBtn(siguiente: boolean) {
+    this.limitePaginas = await this.productoService.getInfo();
+    console.log(this.limitePaginas.numPaginas);
     this.currentPage = siguiente ? (this.currentPage + 1) : (this.currentPage - 1);
+
     console.log(this.currentPage);
 
     this.productoService.getAll(this.currentPage)

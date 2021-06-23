@@ -59,6 +59,9 @@
 .cart {
   position: relative;
 }
+.cart-menu{
+    margin: 0 auto;
+}
 
 #cart_menu_num {
   position: absolute;
@@ -171,7 +174,7 @@
     right: 0;
     top: 60px;
     width: 280px;
-    z-index: 999;
+    
     
     
 }
@@ -187,6 +190,7 @@
 
 .sidebar-cart:hover .popover-carrito{
     display: block;
+    z-index: 999;
 }
 
 .divider {
