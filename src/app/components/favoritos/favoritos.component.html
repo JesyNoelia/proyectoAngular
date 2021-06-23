@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Lista de deseos</h2>
+
+            <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+                <!-- Carousel indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                <!-- Wrapper for carousel items -->
+                <div class="carousel-inner">
+                    <div class="carousel-item" [ngClass]="{active: indice === 0}"
+                        *ngFor="let i of generarArrBucle(); let indice = index">
+                        <div class="row">
+                            <div class=" col-lg-4 col-md-6 col-xs-12 "
+                                *ngFor="let favorito of favoritosUsuario | slice:indice*3:(indice*3)+3">
+                                <div class="thumb-wrapper">
+                                    <div class="img-box">
+                                        <img src="{{favorito.imagen}}" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="thumb-content">
+                                        <h4>{{favorito.titulo}}</h4>
+                                        <p class="item-price"><span>{{favorito.precio | currency:'EUR'}}</span></p>
+                                        <div class="star-rating">
+                                            <ul class="list-inline">
+                                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div><a class="link-warning carrito mb-3 mt-3" (click)="onClick(favorito)"
+                                            *ngIf="seleccionado">Añadir
+                                            al
+                                            Carrito<i class="fas fa-shopping-cart"></i></a>
+
+                                        <p *ngIf="!seleccionado">Producto añadido al carrito</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+
+
+                <!-- Carousel controls -->
+                <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
