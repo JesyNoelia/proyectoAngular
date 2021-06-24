@@ -16,6 +16,7 @@ import { PerfilDatosComponent } from './components/perfil-datos/perfil-datos.com
 import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuario.component';
 import { ProductosUsuarioComponent } from './components/productos-usuario/productos-usuario.component';
 import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
+import { PerfilGuard } from './perfil.guard';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -31,7 +32,7 @@ const routes: Routes = [
   {
     path: 'perfil', component: PerfilUsuarioComponent, children: [
       { path: 'productos', component: ProductosUsuarioComponent },
-      { path: 'datos', component: PerfilDatosComponent },
+      { path: 'datos', component: PerfilDatosComponent, canActivate: [PerfilGuard] },
       { path: 'carrito', component: CarritoPerfilComponent },
       { path: 'favoritos', component: FavoritosComponent }
     ]
