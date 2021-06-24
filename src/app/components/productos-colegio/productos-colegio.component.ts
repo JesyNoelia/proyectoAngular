@@ -14,7 +14,7 @@ export class ProductosColegioComponent implements OnInit {
 
   @Input() producto: Producto;
   arrProductosCole: Producto[];
-  coleId: cole;
+  colegio: cole;
 
   constructor(private colegioService: ColegioService, private activatedRoute: ActivatedRoute, private productoService: ProductoService) {
 
@@ -26,7 +26,9 @@ export class ProductosColegioComponent implements OnInit {
       this.arrProductosCole = await this.productoService.getProductosByIdCole(params.coleId)
     });
     this.activatedRoute.params.subscribe(async (params) => {
-      this.coleId = await this.colegioService.getIdCole(params.coleId)
+      this.colegio = (await this.colegioService.getIdCole(params.coleId))[0]
+      console.log(this.colegio.nombre);
+
     });
   };
 
