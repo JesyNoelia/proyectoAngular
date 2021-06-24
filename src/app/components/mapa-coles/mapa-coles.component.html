@@ -24,7 +24,8 @@
                                 <p>Código del centro: {{cole.codigo_centro}}</p>
                                 <p>Web: <a [href]="cole.web" class="web">{{cole.web}}</a></p>
                                 <p>Dirección: {{cole.direccion}}</p>
-                                <button class="btn btn-primary btn-sm" type="submit" [routerLink]="['/productos']">Ver
+                                <button class="btn btn-primary btn-sm" type="submit"
+                                    [routerLink]="['/productos/colegio/', cole.id]">Ver
                                     productos</button>
                             </agm-info-window>
                         </agm-marker>
