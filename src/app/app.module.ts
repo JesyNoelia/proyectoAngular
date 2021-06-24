@@ -27,7 +27,7 @@ import { SidebarPerfilComponent } from './components/sidebar-perfil/sidebar-perf
 import { ProductosUsuarioComponent } from './components/productos-usuario/productos-usuario.component';
 import { PerfilDatosComponent } from './components/perfil-datos/perfil-datos.component';
 import { ErrorComponent } from './components/error/error.component';
-
+import { AgmCoreModule } from '@agm/core';
 
 
 @NgModule({
@@ -64,7 +64,10 @@ import { ErrorComponent } from './components/error/error.component';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBXoe3vvdGGosbpLVZqUncQDgiW4UAbl58'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

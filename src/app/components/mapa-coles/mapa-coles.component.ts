@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ColegioService } from 'src/app/services/colegio.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-mapa-coles',
@@ -7,9 +9,48 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapaColesComponent implements OnInit {
 
-  constructor() { }
+  latitud: number;
+  longitud: number;
+  arrColegios: any[];
+  search: string;
 
-  ngOnInit(): void {
+  constructor(private colegiosService: ColegioService) {
+    this.latitud = 40;
+    this.longitud = -3;
+    this.search = "";
   }
 
-}
+  ngOnInit(): void {
+
+  }
+  ngAfterViewInit() {
+    navigator.geolocation.getCurrentPosition(position => {
+      this.latitud = position.coords.latitude;
+      this.longitud = position.coords.longitude;
+    })
+
+    this.colegiosService.getAllColes()
+      .then(response => {
+        console.log(response);
+        this.arrColegios = response;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
+  async onClick() {
+    if (this.search === "") {
+      this.arrColegios = await this.colegiosService.getAllColes();
+
+    } else {
+      this.arrColegios = await this.colegiosService.buscarPorPalabra(this.search)
+      if (this.arrColegios.length === 0) {
+        Swal.fire('Lo sentimos', 'Los criterios de búsqueda no coinciden con los colegios registrados', 'error')
+        console.log(this.arrColegios);
+
+        this.arrColegios = await this.colegiosService.getAllColes();
+      };
+    };
+  };
+};

@@ -6,32 +6,42 @@
                 <p>Aquí encontrarás los productos que hay disponibles en cada colegio.</p>
             </div>
         </div>
+        <div class="row">
+            <div class="col-8">
+                <div class="mapa">
+                    <agm-map [latitude]="latitud" [longitude]="longitud" [zoom]="14">
 
-        <div class="col-6">
-            <div class="mapa"></div>
-        </div>
+                        <agm-marker [latitude]="latitud" [longitude]="longitud"></agm-marker>
 
-        <div class="col-6">
+                        <agm-marker *ngFor="let cole of arrColegios" [latitude]="cole.latitud"
+                            [longitude]="cole.longitud"
+                            [iconUrl]="{url: './assets/imagenes/pngwing.com.png', scaledSize:{width:20,height:30}}">
 
-            <div class="container">
+                            <agm-info-window>
+                                <h4>{{cole.nombre}}</h4>
+                                <hr>
+                                <p>Código del centro: {{cole.codigo_centro}}</p>
+                                <p>Web: <a [href]="cole.web" class="web">{{cole.web}}</a></p>
+                                <p>Dirección: {{cole.direccion}}</p>
+                                <button class="btn btn-primary btn-sm" type="submit" [routerLink]="['/productos']">Ver
+                                    productos</button>
+                            </agm-info-window>
+                        </agm-marker>
+
+                    </agm-map>
+                </div>
+            </div>
+
+            <div class=" col-4">
                 <div class="formularioMapas">
 
                     <form class="formulario">
                         <div class="col-12 mb-2">
-                            <label for="" class="form-label">Nombre</label>
-                            <input type="text" id="nombre" class="form-control">
-                        </div>
-                        <div class="col-12 mb-2">
-                            <label for="" class="form-label">xxxx</label>
+                            <label for="" class="form-label">Nombre del Colegio</label>
                             <input type="text" id="nombre" class="form-control">
                         </div>
 
-                        <div class="col-12 mb-2">
-                            <label for="" class="form-label">xxx</label>
-                            <input type="text" id="nombre" class="form-control">
-                        </div>
-
-                        <button class="btn btn-warning btn-lg my-4" type="submit">Enviar</button>
+                        <button class="btn btn-warning btn" type="submit" (click)="onClick()">Buscar</button>
                     </form>
                 </div>
 
