@@ -9,6 +9,7 @@ font-size: 20px;
  font-family: 'Alfa Slab One', cursive;
  border-bottom: 1px solid lightgrey;
  margin-bottom: 50px;
+ padding-bottom: 0.5em;
 }
 
 .container{

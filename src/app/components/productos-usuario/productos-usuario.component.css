@@ -5,10 +5,21 @@
 
 .carrito .texto{
 text-align: center;
-font-size: 20px;
- font-family: 'Alfa Slab One', cursive;
- border-bottom: 1px solid lightgrey;
+font-size: 1.5em
  
+
+ 
+}
+.carrito .texto h1{
+     border-bottom: 1px solid lightgrey;
+     font-family: 'Alfa Slab One', cursive;
+     margin-bottom: 1.5em;
+     padding-bottom: 0.5em;
+}
+
+.carrito .texto p{
+    font-family: 'Indie Flower', cursive;
+    
 }
 
 @media(max-width:1000px){
@@ -16,7 +27,7 @@ font-size: 20px;
         min-height: 300px;
     }
     .carrito .texto{
-        font-size: 15px;
+        font-size: 1em;
     }
 }
 
