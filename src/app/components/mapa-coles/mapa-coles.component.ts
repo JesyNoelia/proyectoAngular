@@ -44,7 +44,7 @@ export class MapaColesComponent implements OnInit {
   };
 
   async onClick() {
-    this.map.setCenter(new google.maps.LatLng(1, 3))
+    //this.map.setCenter(new google.maps.LatLng(1, 3))
 
     if (this.search === "") {
       this.arrColegios = await this.colegiosService.getAllColes();

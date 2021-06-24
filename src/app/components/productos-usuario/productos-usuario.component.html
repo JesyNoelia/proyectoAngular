@@ -1,9 +1,9 @@
 <div class="carrito">
     <div class="texto">
         <h1>Tus productos</h1>
-        <p *ngIf="this.productosUsuario.length===0">No tienes ningún producto añadido</p>
+        <p *ngIf="productosUsuario && productosUsuario.length===0">No tienes ningún producto añadido</p>
 
-        <div class="boton" *ngIf="this.productosUsuario.length===0">
+        <div class="boton" *ngIf="productosUsuario && productosUsuario.length===0">
             <button>
                 <span>
                     <a [routerLink]="['/form']">Añadir producto</a>
