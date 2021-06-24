@@ -12,14 +12,21 @@ export class ColegioService {
 
   constructor(private httpClient: HttpClient) {
 
-    this.baseUrl = 'http://localhost:3000/api/colegios/'
+    this.baseUrl = 'http://localhost:3000/api/colegios'
   }
 
 
   buscarCole(): Promise<cole[]> {
-    return this.httpClient.get<cole[]>(`${this.baseUrl}buscar`).toPromise();
+    return this.httpClient.get<cole[]>(`${this.baseUrl}/buscar`).toPromise();
   }
 
+  getAllColes(): Promise<cole[]> {
+    return this.httpClient.get<cole[]>(`${this.baseUrl}`).toPromise();
+  }
+
+  buscarPorPalabra(pPalabra): Promise<cole[]> {
+    return this.httpClient.get<cole[]>(`${this.baseUrl}/search/${pPalabra}`).toPromise();
+  }
 
 }
 
