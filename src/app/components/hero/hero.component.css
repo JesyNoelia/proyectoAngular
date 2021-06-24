@@ -1,3 +1,5 @@
+
+
 @import url("https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap");
 .hero-main{
     background-image: url(../../../assets/imagenes/heronuevo.png);
@@ -11,20 +13,25 @@
   font-family: "Luckiest Guy", cursive;
     
 }
-.hero-texto{
+/* .hero-texto{
     display: flex;
     justify-content: flex-end;
     
-}
+} */
 
 .texto{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 2.5em;
 }
 
-
+.hero-texto .parrafo p{
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.5em;
+  margin-right: 2em;
+}
 
 
 
@@ -80,4 +87,14 @@ h1 span:last-child {
   80%, 100% {
     transform: scale(1) rotateZ(-3deg);
   }
+}
+
+@media(max-width:425px){
+  .hero-texto .parrafo p, h3{
+  font-size: 1em;
+  margin-left:1em;
+}
+.texto h1{
+ font-size: 3em;
+}
 }
