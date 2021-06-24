@@ -26,6 +26,7 @@ import { CarritoPerfilComponent } from './components/carrito-perfil/carrito-perf
 import { SidebarPerfilComponent } from './components/sidebar-perfil/sidebar-perfil.component';
 import { ProductosUsuarioComponent } from './components/productos-usuario/productos-usuario.component';
 import { PerfilDatosComponent } from './components/perfil-datos/perfil-datos.component';
+import { ErrorComponent } from './components/error/error.component';
 
 
 
@@ -54,6 +55,7 @@ import { PerfilDatosComponent } from './components/perfil-datos/perfil-datos.com
     SidebarPerfilComponent,
     ProductosUsuarioComponent,
     PerfilDatosComponent,
+    ErrorComponent,
 
 
   ],
