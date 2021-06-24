@@ -2,6 +2,15 @@
     <div class="texto">
         <h1>Tus productos</h1>
         <p *ngIf="this.productosUsuario.length===0">No tienes ningún producto añadido</p>
+
+        <div class="boton" *ngIf="this.productosUsuario.length===0">
+            <button>
+                <span>
+                    <a [routerLink]="['/form']">Añadir producto</a>
+                </span>
+            </button>
+        </div>
+
     </div>
     <div class="row">
         <div class="col-lg-6 col-sm-12" *ngFor="let producto of productosUsuario">
