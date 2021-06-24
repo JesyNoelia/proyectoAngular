@@ -1,13 +1,15 @@
-
+.imagen{
+    max-height: 400px;
+}
 
 img{
     display: block;
     margin: 0 auto;
-    width: 100%;
+    width: 50%;
     height: auto;
 }
 .container{
     margin-top: 130px;
-    min-height: 500px;
+    min-height: 400px;
     max-width: 700px;
 }
