@@ -15,6 +15,7 @@ import { MapaColesComponent } from './components/mapa-coles/mapa-coles.component
 import { ModificarProductoComponent } from './components/modificar-producto/modificar-producto.component';
 import { PerfilDatosComponent } from './components/perfil-datos/perfil-datos.component';
 import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuario.component';
+import { ProductosColegioComponent } from './components/productos-colegio/productos-colegio.component';
 import { ProductosUsuarioComponent } from './components/productos-usuario/productos-usuario.component';
 import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
 import { PerfilGuard } from './perfil.guard';
@@ -41,6 +42,7 @@ const routes: Routes = [
   { path: 'equipo', component: ConocenosComponent },
   { path: 'modificar/:productoId', component: ModificarProductoComponent },
   { path: 'error', component: ErrorComponent },
+  { path: 'productos/colegio/:coleId', component: ProductosColegioComponent },
   { path: '**', redirectTo: '/home' },
 ];
 

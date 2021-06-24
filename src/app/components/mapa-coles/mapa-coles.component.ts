@@ -2,6 +2,8 @@
 
 
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Producto } from 'src/app/interfaces/producto.interface';
 import { ColegioService } from 'src/app/services/colegio.service';
 import Swal from 'sweetalert2';
 
@@ -18,10 +20,12 @@ export class MapaColesComponent implements OnInit {
   search: string;
   map: any;
 
+
   constructor(private colegiosService: ColegioService) {
     this.latitud = 40;
     this.longitud = -3;
     this.search = "";
+
   }
 
   ngOnInit(): void {
@@ -35,7 +39,7 @@ export class MapaColesComponent implements OnInit {
 
     this.colegiosService.getAllColes()
       .then(response => {
-        console.log(response);
+        //console.log(response);
         this.arrColegios = response;
       })
       .catch(error => {
@@ -64,4 +68,6 @@ export class MapaColesComponent implements OnInit {
     this.map = $event;
 
   }
+
+
 };
