@@ -14,7 +14,8 @@
 
 
 .imagen{
-  background-color: lightpink;
+  background-image: url("../../../assets/imagenes/avatar-1577909_1280.png");
+  background-size: 12.5em;
   border-radius: 10px;
   width: 200px;
   height: 200px;
@@ -111,6 +112,14 @@ body {
 }
 
 }
+
+@media(max-width:780px){
+.usuario{
+  margin-top:15em;
+}
+}
+
+
 @media(max-width:425px){
   .usuario{
     height: 600px;

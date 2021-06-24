@@ -8,6 +8,7 @@ import { ProductoService } from 'src/app/services/producto.service';
   styleUrls: ['./productos-usuario.component.css']
 })
 export class ProductosUsuarioComponent implements OnInit {
+
   productosUsuario: Producto[];
 
   constructor(private productoService: ProductoService) { }

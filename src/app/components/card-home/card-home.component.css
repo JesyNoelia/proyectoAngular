@@ -39,7 +39,7 @@ section .principal .img{
     background-image: url('../../../assets/imagenes/school-supplies-5541102_1920.jpg');
     background-size: cover;
     background-position: center;
-    box-shadow: 10px 10px 10px rgba(153, 152, 155, 0.75);
+    box-shadow: 10px 10px 10px rgba(223, 221, 226, 0.5);
 }
 
 section .principal .categoria{
@@ -62,12 +62,12 @@ section .principal .categoria{
 
 .categoria .texto p{
 	font-family:'Indie Flower', cursive;
-	font-size: 15px;
+	font-size: 1.5em;
 }
 
 .categoria .texto h3{
 	font-family: 'Mountains of Christmas', cursive;
-	font-size: 40px;
+	font-size: 2.5em;
 	border-bottom: 1px solid black;
 	padding-bottom: 10px;
 	text-align: center;
@@ -86,18 +86,27 @@ section .principal .categoria{
 	justify-content: flex-end;
 }
 
-@media(max-width:375px){
+@media(max-width:425px){
 	section .principal article{
 		width: 70%;
 		height: 100%;
 	}
-	.texto p{
-	    font-size: 10px;
+	.categoria .texto p{
+	    font-size: 1em;
     }
     .texto h3{
-	    font-size: 20px;
+	    font-size: 1em;
     }
     .texto button{
 	    display:none;
     }
+section .principal .imagen{
+	width: 65%;
+	height: 75%;
+	left: -20px;
+}
+section .principal{
+	justify-content: center;
+	
+}
 }
