@@ -9,7 +9,8 @@
         <div class="row">
             <div class="col-8">
                 <div class="mapa">
-                    <agm-map [latitude]="latitud" [longitude]="longitud" [zoom]="14">
+                    <agm-map [latitude]="latitud" [longitude]="longitud" [zoom]="14" #map
+                        (mapReady)="onMapReady($event)">
 
                         <agm-marker [latitude]="latitud" [longitude]="longitud"></agm-marker>
 
@@ -41,8 +42,9 @@
                             <input type="text" id="nombre" class="form-control">
                         </div>
 
-                        <button class="btn btn-warning btn" type="submit" (click)="onClick()">Buscar</button>
+
                     </form>
+                    <button class="btn btn-warning btn" (click)="onClick()">Buscar</button>
                 </div>
 
             </div>

@@ -28,6 +28,7 @@ import { ProductosUsuarioComponent } from './components/productos-usuario/produc
 import { PerfilDatosComponent } from './components/perfil-datos/perfil-datos.component';
 import { ErrorComponent } from './components/error/error.component';
 import { AgmCoreModule } from '@agm/core';
+import { ProductosColegioComponent } from './components/productos-colegio/productos-colegio.component';
 
 
 @NgModule({
@@ -56,6 +57,7 @@ import { AgmCoreModule } from '@agm/core';
     ProductosUsuarioComponent,
     PerfilDatosComponent,
     ErrorComponent,
+    ProductosColegioComponent,
 
 
   ],
