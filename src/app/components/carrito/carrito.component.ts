@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2'
 
 
+
 @Component({
   selector: 'app-carrito',
   templateUrl: './carrito.component.html',
@@ -32,7 +33,7 @@ export class CarritoComponent implements OnInit {
 
   async onClickComprar() {
     if (!this.usuarioService.isLogged()) {
-      alert('Para comprar hay que iniciar sesión');
+      Swal.fire('Para comprar hay que iniciar sesión');
     } else {
       const carritoLocal = JSON.parse(localStorage.getItem('carrito'))
       const response = await this.productoService.getCart();

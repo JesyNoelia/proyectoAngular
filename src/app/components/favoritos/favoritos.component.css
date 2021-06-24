@@ -166,4 +166,7 @@ h2 b {
 	.container{
 		margin-top:50px;
 	}
+	.row h2{
+		font-size: 2em;
+	}
 }

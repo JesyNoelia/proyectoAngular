@@ -1,6 +1,6 @@
 .carrito{
-    min-height: 500px;
-    margin-top:150px;
+    min-height: 31.25em;
+    margin-top:9.375em;
 }
 
 .carrito .texto{
@@ -84,12 +84,13 @@ body {
 
 }
 
-@media(max-width:1000px){
+@media(max-width:790px){
     .carrito{
         min-height: 300px;
     }
     .carrito .texto{
         font-size: 1em;
+       margin-top:200px;
     }
 }
 

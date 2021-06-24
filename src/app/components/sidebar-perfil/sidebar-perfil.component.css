@@ -100,7 +100,7 @@
   line-height: 20px;
 }
 .sidebar-navigation li a {
-  padding: 10px 15px 10px 30px;
+  padding: 10px 15px 10px 20px;
   display: block;
   color: rgb(27, 25, 25);
   text-decoration: none;
@@ -142,7 +142,7 @@
   padding-left: 220px;
 }
 
-@media(max-width:780px){
+@media(max-width:785px){
   .sidebarMovil{
     display:block;
   }
