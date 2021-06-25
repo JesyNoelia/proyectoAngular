@@ -22,12 +22,12 @@ export class ProductosColegioComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(async (params) => {
-      console.log(params.coleId);
+      //console.log(params.coleId);
       this.arrProductosCole = await this.productoService.getProductosByIdCole(params.coleId)
     });
     this.activatedRoute.params.subscribe(async (params) => {
       this.colegio = (await this.colegioService.getIdCole(params.coleId))[0]
-      console.log(this.colegio.nombre);
+      //console.log(this.colegio.nombre);
 
     });
   };

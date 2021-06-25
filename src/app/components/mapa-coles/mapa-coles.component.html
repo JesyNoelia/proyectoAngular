@@ -37,14 +37,14 @@
             <div class=" col-4">
                 <div class="formularioMapas">
 
-                    <form class="formulario">
+                    <div class="formulario">
                         <div class="col-12 mb-2">
                             <label for="" class="form-label">Nombre del Colegio</label>
-                            <input type="text" id="nombre" class="form-control">
+                            <input type="text" id="nombre" class="form-control" [(ngModel)]="search">
                         </div>
 
 
-                    </form>
+                    </div>
                     <button class="btn btn-warning btn" (click)="onClick()">Buscar</button>
                 </div>
 
