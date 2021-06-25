@@ -1,10 +1,28 @@
 .coles{
-    background-color:lightpink;
+
  margin-top:10px;
  margin-bottom: 10px;
  padding: 10px;
+
 }
 
+.coles h1{
+      font-family: 'Mountains of Christmas', cursive;
+    border: 1px solid rgb(231, 243, 127);
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px rgba(182, 181, 127, 0.5);
+    font-size: 3em;
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(231, 243, 127);
+}
+
+.coles p{
+     font-family: 'Indie Flower', cursive;
+     font-size: 1.5em;
+     text-align: center;
+     margin: 20px 0;
+}
 .mapa{
  border-radius: 40px;
 }
