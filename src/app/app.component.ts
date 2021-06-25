@@ -21,6 +21,15 @@ export class AppComponent {
     });
   }
 
+  /*  ngOnInit() {
+     this.router.events.subscribe((evt) => {
+       if (!(evt instanceof NavigationEnd)) {
+         return;
+       }
+       window.scrollTo(0, 0)
+     });
+   } */
+
   getImage() {
     //console.log(this.path);
 

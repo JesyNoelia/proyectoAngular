@@ -49,12 +49,16 @@ export class MapaColesComponent implements OnInit {
 
   async onClick() {
     //this.map.setCenter(new google.maps.LatLng(1, 3))
+    console.log(this.search);
 
     if (this.search === "") {
       this.arrColegios = await this.colegiosService.getAllColes();
 
     } else {
       this.arrColegios = await this.colegiosService.buscarPorPalabra(this.search);
+      this.map.setCenter(new google.maps.LatLng(this.arrColegios[0].latitud, this.arrColegios[0].longitud))
+      console.log(this.arrColegios);
+
       if (this.arrColegios.length === 0) {
         Swal.fire('Lo sentimos', 'Los criterios de búsqueda no coinciden con los colegios registrados', 'error')
         console.log(this.arrColegios);
