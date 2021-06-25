@@ -12,23 +12,22 @@ export class AppComponent {
 
   constructor(private activate: ActivatedRoute, private router: Router) {
     router.events.subscribe((val) => {
-      // see also 
       if (val instanceof NavigationEnd) {
         this.path = this.router.url;
-
+        window.scrollTo(0, 0)
       }
       //avisa cuando se cambia una ruta
     });
   }
 
-  /*  ngOnInit() {
-     this.router.events.subscribe((evt) => {
-       if (!(evt instanceof NavigationEnd)) {
-         return;
-       }
-       window.scrollTo(0, 0)
-     });
-   } */
+  /* ngOnInit() {
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+        return;
+      }
+      window.scrollTo(0, 0)
+    });
+  } */
 
   getImage() {
     //console.log(this.path);

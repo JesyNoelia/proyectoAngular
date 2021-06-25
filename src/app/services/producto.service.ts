@@ -1,19 +1,22 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 import { Producto } from '../interfaces/producto.interface';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductoService {
 
-
+  private productos$ = new Subject<Producto[]>();
   private baseUrl: string;
   carrito: Producto[];
   item: Producto;
 
 
   constructor(private httpClient: HttpClient) {
+    this.productos$ = new Subject();
     this.carrito = [];
     this.baseUrl = 'http://localhost:3000/api'
 
@@ -36,6 +39,10 @@ export class ProductoService {
     return this.httpClient.get<Producto>(`${this.baseUrl}/productos/${pId}`).toPromise();
   }
 
+  getProductos$(): Observable<Producto[]> {
+    return this.productos$.asObservable();
+  };
+
 
   //METODO AGREGAR PRODUCTO AL CARRITO
   addProduct(pProducto: Producto) {
@@ -43,9 +50,11 @@ export class ProductoService {
 
     if (carritoLocal) {
       carritoLocal.push(pProducto)
+      this.productos$.next(carritoLocal)
       localStorage.setItem('carrito', JSON.stringify(carritoLocal));
     } else {
       this.carrito.push(pProducto)
+      this.productos$.next(this.carrito)
       localStorage.setItem('carrito', JSON.stringify(this.carrito));
     }
   }
@@ -161,4 +170,8 @@ export class ProductoService {
   getProductosByIdCole(pIdCole): Promise<Producto[]> {
     return this.httpClient.get<Producto[]>(`${this.baseUrl}/productos/colegio/${pIdCole}`).toPromise();
   }
+
+
+  //METODO OBSERVABLE
+
 }
