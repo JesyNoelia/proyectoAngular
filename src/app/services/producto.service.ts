@@ -157,4 +157,8 @@ export class ProductoService {
     return this.httpClient.get<any>(`${this.baseUrl}/productos/info`).toPromise();
   }
 
+  //http://localhost:3000/api/productos/colegio/3
+  getProductosByIdCole(pIdCole): Promise<Producto[]> {
+    return this.httpClient.get<Producto[]>(`${this.baseUrl}/productos/colegio/${pIdCole}`).toPromise();
+  }
 }
