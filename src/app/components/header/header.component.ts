@@ -34,7 +34,6 @@ export class HeaderComponent implements OnInit {
 
     };
     this.total = this.sumarCarrito();
-
   };
 
   sumarCantidadProductos() {

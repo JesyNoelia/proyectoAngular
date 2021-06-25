@@ -29,8 +29,9 @@ export class MapaColesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    window.scroll(0, 0);
   }
+
   ngAfterViewInit() {
     navigator.geolocation.getCurrentPosition(position => {
       this.latitud = position.coords.latitude;
