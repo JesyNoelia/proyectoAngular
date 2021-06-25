@@ -1,3 +1,25 @@
 .container{
     margin-top: 120px;
+     
+}
+
+.container .sinproductos{
+      font-family: 'Indie Flower', cursive;
+      font-size: 1.5em;
+      padding:10px;
+      margin-left: 50px;
+}
+
+/* .container h2{
+    font-family: 'Mountains of Christmas', cursive;
+} */
+
+.botones{
+    display:flex;
+    padding: 10px;
+    
+}
+
+.botones .mapas{
+    margin-left: 20px;
 }
