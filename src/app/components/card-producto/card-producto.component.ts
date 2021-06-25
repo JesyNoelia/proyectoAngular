@@ -40,6 +40,7 @@ export class CardProductoComponent implements OnInit {
       const res = await this.productoService.addProduct(pProducto);
       this.seleccionado = false;
     }
+    //window.location.reload();
 
   };
 

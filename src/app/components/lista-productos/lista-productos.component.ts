@@ -56,10 +56,10 @@ export class ListaProductosComponent implements OnInit {
 
   async onClickBtn(siguiente: boolean) {
     this.limitePaginas = await this.productoService.getInfo();
-    console.log(this.limitePaginas.numPaginas);
+    //console.log(this.limitePaginas.numPaginas);
     this.currentPage = siguiente ? (this.currentPage + 1) : (this.currentPage - 1);
 
-    console.log(this.currentPage);
+    //console.log(this.currentPage);
 
     this.productoService.getAll(this.currentPage)
       .then(response => this.arrProductos = response)
