@@ -49,7 +49,9 @@ export class CarritoComponent implements OnInit {
 
   onClickVaciar() {
     localStorage.removeItem('carrito');
-    window.location.reload();
+    /* window.location.reload(); */
+    this.productos = [];
+    this.total = 0;
   };
 
   onClickEliminar(pProductoId) {
@@ -58,7 +60,8 @@ export class CarritoComponent implements OnInit {
     const productosCarrito = carrito.filter(producto => producto.id !== pProductoId.id)
 
     localStorage.setItem('carrito', JSON.stringify(productosCarrito))
-    window.location.reload();
+    this.productos = productosCarrito;
+    this.total = this.sumarCarrito();
   };
 
   //SUMAR CARRITO

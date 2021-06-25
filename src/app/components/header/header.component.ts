@@ -3,6 +3,8 @@ import { Producto } from 'src/app/interfaces/producto.interface';
 import { UsuarioService } from '../../services/usuario.service';
 import Swal from 'sweetalert2'
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { ProductoService } from 'src/app/services/producto.service';
 
 @Component({
   selector: 'app-header',
@@ -10,22 +12,29 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+
+  productos$: Observable<Producto[]>;
   productos: Producto[];
   total: number;
 
-  constructor(public usuarioService: UsuarioService, private router: Router) { }
+  constructor(public usuarioService: UsuarioService, private router: Router, private productosService: ProductoService) { }
 
 
 
   async ngOnInit() {
+    this.productosService.getProductos$().subscribe(producto => {
+      this.productos = producto;
+      this.total = this.sumarCarrito();
+    });
     const carritoLocal = JSON.parse(localStorage.getItem('carrito'))
     if (carritoLocal == null) {
       this.productos = [];
     } else {
       this.productos = carritoLocal;
-    }
 
+    };
     this.total = this.sumarCarrito();
+
   };
 
   sumarCantidadProductos() {
