@@ -18,7 +18,7 @@ font-size: 1.5em
 }
 
 .carrito .texto p{
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Poppins', sans-serif;
     
 }
 .boton a{
@@ -47,7 +47,7 @@ button:after {
   left: 10px;
   height: 100%;
   width: 100%;
-  background-color: #ffea00;
+  background-color: #ffb71c;
   content: "";
   z-index: -1;
   transition: transform 0.2s ease-in, width 0.2s ease-out 0.2s;

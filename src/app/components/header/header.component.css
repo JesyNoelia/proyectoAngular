@@ -13,6 +13,13 @@
 }
 .desloguearse{
     cursor: pointer;
+    border: 1px grey;
+    border-radius: 10px;
+}
+
+.sesion{
+   border: 1px grey;
+    border-radius: 10px; 
 }
 
 

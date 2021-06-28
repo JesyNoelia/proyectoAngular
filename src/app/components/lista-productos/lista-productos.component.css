@@ -25,7 +25,7 @@ select option{
 }
 
 .barranav{
-    margin-top: 100px;
+    margin-top: 90px;
 }
 .container{
    margin: 0 auto;
@@ -251,7 +251,7 @@ body {
 
 .offset {
   --color: #ffb71c;
-  --hover: #38f327;
+  --hover: #ffb71c;
 }
 
 .botones button {

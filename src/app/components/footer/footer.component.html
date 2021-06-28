@@ -7,6 +7,7 @@
         <div class="row">
             <div class="col-3 legal">
                 <ul>
+                    <li class="mb-2">INFORMACION</li>
                     <li role="button" [routerLink]="['/error']">Aviso Legal</li>
                     <li role="button" [routerLink]="['/error']">Politica de privacidad</li>
                     <li role="button" [routerLink]="['/error']">Politica de cookies</li>
@@ -16,21 +17,24 @@
 
             <div class="col-3 legal">
                 <ul>
+                    <li class="mb-2">EMPRESA</li>
+                    <li [routerLink]="['/productos']" role="button">Productos</li>
                     <li [routerLink]="['/contacto']" role="button">Contactanos</li>
                     <li [routerLink]="['/equipo']" role="button">Equipo</li>
+                    <li [routerLink]="['/error']" role="button">Ayuda</li>
                 </ul>
             </div>
             <div class="col-6">
                 <ul class="social">
+
                     <li><a href="#"><i class="fab fa-facebook social"></i></a></li>
                     <li><a href="#"><i class="fab fa-twitter social"></i></a></li>
                     <li><a href="#"><i class="fab fa-instagram social"></i></a></li>
                     <li><a href="#"><i class="fab fa-pinterest social"></i></a></li>
-
                 </ul>
             </div>
         </div>
     </div>
 
-    <address class="d-flex justify-content-center">Copyright 2021</address>
+    <address class="d-flex justify-content-center">School Tools&copy; Todos los derechos reservados</address>
 </footer>

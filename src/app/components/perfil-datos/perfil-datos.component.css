@@ -45,18 +45,18 @@ justify-content: center;
 }
 .texto h4{
   font-size: 30px;
-  font-family: 'Indie Flower', cursive;
+ font-family: 'Poppins', sans-serif;
   text-align: center;
   padding:10px;
 }
 .texto p{
   font-size: 20px;
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Poppins', sans-serif;
 }
 
 .texto ul li{
   font-size: 20px;
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Poppins', sans-serif;
 }
 /* ESTILOS BOTON MODIFICAR */
 
@@ -79,7 +79,7 @@ button:after {
   left: 10px;
   height: 100%;
   width: 100%;
-  background-color: #ffea00;
+  background-color: #ffb71c;
   content: "";
   z-index: -1;
   transition: transform 0.2s ease-in, width 0.2s ease-out 0.2s;
