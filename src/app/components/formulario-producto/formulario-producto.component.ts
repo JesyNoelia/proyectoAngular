@@ -37,8 +37,10 @@ export class FormularioProductoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.colegioService.buscarCole()
+    this.colegioService.getAllColes()
       .then(response => {
+        console.log(response);
+
         this.colegios = response;
       })
       .catch(error => console.log(error));

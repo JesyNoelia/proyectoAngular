@@ -30,7 +30,7 @@ export class RegistroUsuarioComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.colegioService.buscarCole()
+    this.colegioService.getAllColes()
       .then(response => {
         this.colegios = response;
 
