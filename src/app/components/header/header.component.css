@@ -1,5 +1,5 @@
 .navbar{
-    background-color: rgb(49, 211, 233);
+    background-color: rgb(0, 180, 204);
 }
 .logo img{
     width: 25%;
@@ -22,7 +22,9 @@
     border-radius: 10px; 
 }
 
-
+.nav-link{
+    color: white;
+}
 
 .fas{
     padding-right: 10px;
